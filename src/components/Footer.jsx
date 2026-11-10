@@ -64,7 +64,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Col 3: Layanan Pengadaan */}
+        {/* Col 3: Kontak & Informasi */}
         <div>
           <strong style={{ fontSize: '0.85rem', color: 'var(--text-main)', display: 'block', marginBottom: '0.6rem' }}>
             Kontak & Kemitraan
@@ -72,11 +72,11 @@ export default function Footer() {
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
               <Phone size={15} weight="fill" style={{ color: 'var(--primary)' }} />
-              <span>WhatsApp Pengadaan / Ciwidey: <a href="https://wa.me/6281223456781" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)', textDecoration: 'none', fontWeight: 600 }}>0812-2345-6781</a></span>
+              <span>WhatsApp Admin / Ciwidey: <a href="https://wa.me/6281223456781" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)', textDecoration: 'none', fontWeight: 600 }}>0812-2345-6781</a></span>
             </li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
               <EnvelopeSimple size={15} weight="fill" style={{ color: 'var(--primary)' }} />
-              <span>Email: pengadaan@tanigo.id</span>
+              <span>Email: halo@tanigo.id</span>
             </li>
             <li style={{ marginTop: '0.4rem', fontSize: '11px', color: 'var(--text-muted)' }}>
               Jam penjemputan: Setiap hari, 07.00–17.00 WIB

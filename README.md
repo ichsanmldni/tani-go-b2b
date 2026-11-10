@@ -1,6 +1,6 @@
-# Tanigo — B2B Marketplace Melon Hidroponik
+# Tanigo — Marketplace Melon Hidroponik
 
-Platform web pengadaan buah B2B (Business-to-Business) yang menghubungkan pembeli (*supermarket*, hotel, restoran, katering, dan distributor buah) langsung dengan ketersediaan melon hidroponik dari 3 greenhouse mitra di Jawa Barat.
+Platform web monitoring kematangan dan pemesanan melon hidroponik langsung dari 3 kebun greenhouse mitra di Jawa Barat.
 
 ---
 
@@ -26,8 +26,8 @@ Platform web pengadaan buah B2B (Business-to-Business) yang menghubungkan pembel
 
 ## Tentang Proyek
 Frontend ini dibangun dengan **React 18** dan **Vite** untuk memberikan performa yang cepat, ringan, dan responsif. Aplikasi ini menyajikan:
-- **Katalog Melon Matang**: Informasi kuota buah matang siap diambil hari ini beserta lokasi kebun.
-- **Katalog Melon Mengkal**: Estimasi masa panen (2–4 hari) untuk kebutuhan *booking* / reservasi kuota panen.
+- **Katalog Melon Matang**: Informasi ketersediaan buah matang siap diambil hari ini beserta lokasi kebun.
+- **Katalog Melon Mengkal**: Estimasi masa panen (2–4 hari) untuk kebutuhan pemesanan panen mendatang.
 - **Sebaran Lokasi Greenhouse**: Koordinat Google Maps, elevasi, suhu rata-rata, dan kontak penanggung jawab kebun.
 - **Panduan Penjemputan Langsung**: Prosedur 4 langkah penjemputan buah langsung di greenhouse.
 - **Pemesanan Cepat via WhatsApp**: Tautan interaktif ke pengelola kebun dengan pesan yang telah tersusun otomatis.

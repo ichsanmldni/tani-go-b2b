@@ -114,7 +114,7 @@ export default function KpiSummary({
           </div>
 
           <p style={{ margin: 0, fontSize: '0.75rem', color: 'var(--text-muted)', lineHeight: 1.4 }}>
-            Estimasi matang 2–4 hari lagi, kuota dapat dibooking sekarang.
+            Estimasi matang 2–4 hari lagi, siap dipesan dari kebun mitra.
           </p>
         </div>
 
@@ -141,7 +141,7 @@ export default function KpiSummary({
             </div>
             <span className="badge badge-neutral" style={{ fontSize: '0.68rem', padding: '3px 8px' }}>
               <MapPin size={11} weight="fill" style={{ color: '#dc2626' }} />
-              Bandung Raya
+              3 Lokasi Kebun
             </span>
           </div>
 

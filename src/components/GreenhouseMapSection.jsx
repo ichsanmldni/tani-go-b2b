@@ -72,7 +72,7 @@ export default function GreenhouseMapSection({
               </h2>
             </div>
             <p style={{ margin: 0, fontSize: '0.78rem', color: 'var(--text-muted)' }}>
-              Tiga lokasi greenhouse di Bandung Raya dengan ketinggian optimal untuk budidaya melon hidroponik.
+              Tiga lokasi kebun greenhouse mitra aktif dengan monitoring kematangan langsung.
             </p>
           </div>
 
@@ -101,7 +101,7 @@ export default function GreenhouseMapSection({
             <Mountains size={22} weight="fill" style={{ color: 'var(--primary)' }} />
             <div>
               <strong style={{ fontSize: '13px', color: 'var(--text-main)', display: 'block' }}>
-                Lokasi Greenhouse Bandung Raya (1.150 – 1.320 mdpl)
+                Lokasi Greenhouse Kebun Mitra (1.150 – 1.320 mdpl)
               </strong>
               <small style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
                 Tiga greenhouse aktif dengan akses penjemputan armada dan kontak pengelola langsung.

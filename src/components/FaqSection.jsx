@@ -19,10 +19,10 @@ export default function FaqSection() {
     },
     {
       q: 'Bagaimana cara booking melon mengkal?',
-      a: 'Gunakan tombol Booking Melon pada daftar melon mengkal untuk memesan kuota panen via WhatsApp pengelola kebun.'
+      a: 'Gunakan tombol Booking Melon pada daftar melon mengkal untuk memesan langsung via WhatsApp pengelola kebun.'
     },
     {
-      q: 'Bagaimana sistem pembayaran pengadaan melon?',
+      q: 'Bagaimana sistem pembayaran pemesanan melon?',
       a: 'Pembayaran dilakukan setelah proses penimbangan buah selesai di greenhouse melalui transfer bank langsung (QRIS / Virtual Account / Transfer Bank) atau tunai sebelum buah dimuat ke armada Anda.'
     },
     {

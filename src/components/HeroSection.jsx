@@ -67,23 +67,23 @@ export default function HeroSection({
           <div className="hero-fruit-left">
             {/* Category / Sub-tag */}
             <span className="hero-fruit-tag">
-              PLATFORM PENGADAAN B2B &middot; BANDUNG RAYA
+              MONITORING KEMATANGAN &middot; KEBUN MITRA TANIGO
             </span>
 
-            {/* Big Headline (Matching 'Healthy Fresh Fruits!' in reference) */}
+            {/* Big Headline */}
             <h1 className="hero-fruit-headline">
-              Melon Hidroponik <br />
-              Segar <span className="hero-fruit-accent">Berkualitas!</span>
+              Monitoring Kematangan <br />
+              Melon di <span className="hero-fruit-accent">Kebun Mitra!</span>
             </h1>
 
             {/* Sub-headline */}
             <h2 className="hero-fruit-subhead">
-              Panen Langsung dari Greenhouse Terpercaya
+              Pantau Langsung Kematangan Melon dari Pohonnya
             </h2>
 
             {/* Description */}
             <p className="hero-fruit-desc">
-              Pantau kuota melon matang siap ambil dan booking jadwal panen melon mengkal dari 3 greenhouse aktif di Bandung Raya. Timbang langsung di kebun tanpa perantara.
+              Monitoring langsung tingkat kematangan melon di kebun mitra kami secara real-time. Amankan buah matang yang siap diambil hari ini atau pesan fase mengkal langsung dari pengelola kebun.
             </p>
 
             {/* Pill CTA Buttons */}
@@ -93,7 +93,7 @@ export default function HeroSection({
                 className="hero-fruit-btn-primary"
               >
                 <CheckCircle size={18} weight="bold" />
-                <span>Lihat Stok Matang ({readyCount})</span>
+                <span>Lihat Melon Matang ({readyCount})</span>
               </a>
 
               <a
@@ -101,7 +101,7 @@ export default function HeroSection({
                 className="hero-fruit-btn-secondary"
               >
                 <Clock size={18} weight="bold" />
-                <span>Booking Mengkal ({mengkalCount})</span>
+                <span>Pesan Mengkal ({mengkalCount})</span>
               </a>
             </div>
           </div>
@@ -122,7 +122,7 @@ export default function HeroSection({
         {/* Bottom Quick Row (Matching 'OUR MENU' cards in the reference) */}
         <div className="hero-bottom-menu-wrap">
           <span className="hero-bottom-menu-label">
-            LOKASI GREENHOUSE AKTIF
+            LOKASI KEBUN MITRA AKTIF
           </span>
 
           <div className="hero-bottom-menu-grid">
@@ -131,7 +131,7 @@ export default function HeroSection({
                 key={gh.id}
                 href="#siap-jual"
                 className="hero-bottom-menu-card"
-                title={`Lihat kuota di ${gh.name}`}
+                title={`Lihat ketersediaan di ${gh.name}`}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <div className="hero-bottom-card-icon">

@@ -9,7 +9,7 @@ export default function MengkalSection({ items = [] }) {
   const handleBookingWhatsApp = (item) => {
     const cleanPhone = (item.no_hp || '081223456781').replace(/[^0-9]/g, '');
     const intlPhone = cleanPhone.startsWith('0') ? '62' + cleanPhone.slice(1) : cleanPhone;
-    const msg = `Halo ${item.kontak_kebun || 'Pengelola kebun'}, saya ingin booking melon mengkal di ${item.nama_kebun}. Perkiraan panen: ${item.perkiraan_masa_panen || '2-4 hari lagi'}. Mohon info kuota dan prosedur pemesanannya. Terima kasih.`;
+    const msg = `Halo ${item.kontak_kebun || 'Pengelola kebun'}, saya ingin memesan melon mengkal di ${item.nama_kebun}. Perkiraan panen: ${item.perkiraan_masa_panen || '2-4 hari lagi'}. Mohon info ketersediaan dan prosedur pengambilannya. Terima kasih.`;
     window.open(`https://wa.me/${intlPhone}?text=${encodeURIComponent(msg)}`, '_blank');
   };
 
@@ -224,7 +224,7 @@ export default function MengkalSection({ items = [] }) {
                             color: 'var(--status-upcoming)',
                             fontWeight: 700
                           }}
-                          title="Reservasi kuota panen via WhatsApp"
+                          title="Pesan melon mengkal via WhatsApp"
                         >
                           <WhatsappLogo size={14} weight="fill" />
                           <span>Booking Melon</span>
@@ -339,7 +339,7 @@ export default function MengkalSection({ items = [] }) {
                         color: 'var(--status-upcoming)',
                         fontWeight: 700
                       }}
-                      title="Booking kuota via WhatsApp"
+                      title="Pesan melon mengkal via WhatsApp"
                     >
                       <WhatsappLogo size={16} weight="fill" />
                       <span>Booking via WA</span>
