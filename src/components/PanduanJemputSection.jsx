@@ -1,60 +1,65 @@
 import React from 'react';
-import { Truck, Clock, MapPin, Phone, Scales, ArrowRight } from '@phosphor-icons/react';
+import { Truck, Clock, MapPin, Phone, Scales } from '@phosphor-icons/react';
 
 export default function PanduanJemputSection() {
   const steps = [
     {
       step: '01',
-      badge: 'Pemesanan',
+      badge: 'Kontak Langsung',
       icon: Phone,
       title: 'Pilih dan Pesan',
-      desc: 'Pilih greenhouse tujuan lalu hubungi nomor pengelola kebun untuk konfirmasi stok.'
+      desc: 'Pilih greenhouse tujuan lalu hubungi nomor pengelola kebun untuk konfirmasi ketersediaan melon.'
     },
     {
       step: '02',
       badge: '07.00–10.30 WIB',
       icon: Clock,
       title: 'Tentukan Jam Jemput',
-      desc: 'Jadwalkan jam penjemputan pagi hari agar kesegaran melon hasil panen tetap optimal.'
+      desc: 'Jadwalkan jam penjemputan pagi hari agar kesegaran melon hasil panen tetap optimal dan dingin.'
     },
     {
       step: '03',
-      badge: 'Akses Armada',
+      badge: 'Navigasi Maps',
       icon: MapPin,
       title: 'Tuju Lokasi Kebun',
-      desc: 'Gunakan tautan Google Maps untuk navigasi langsung ke pintu gerbang masuk greenhouse.'
+      desc: 'Gunakan tautan Google Maps untuk navigasi langsung ke pintu gerbang masuk greenhouse kebun mitra.'
     },
     {
       step: '04',
-      badge: 'Timbang di Tempat',
+      badge: 'Timbang Bersama',
       icon: Scales,
       title: 'Timbang dan Muat',
-      desc: 'Buah ditimbang bersama di kebun lalu langsung dimuat ke kendaraan Anda.'
+      desc: 'Buah ditimbang transparan di kebun bersama pengelola lalu langsung dimuat ke kendaraan Anda.'
     }
   ];
 
   return (
     <section id="panduan" style={{ marginBottom: '2.5rem', scrollMarginTop: '80px' }}>
-      <div className="panel" style={{ padding: '1.5rem', backgroundColor: '#ffffff' }}>
+      <div className="panel" style={{ padding: '1.75rem', backgroundColor: '#ffffff', borderRadius: '20px' }}>
         
         {/* Header */}
-        <div style={{ marginBottom: '1.5rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', marginBottom: '0.25rem' }}>
-            <Truck size={20} weight="bold" style={{ color: 'var(--primary)' }} />
-            <h2 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--text-main)', margin: 0, letterSpacing: '-0.01em' }}>
-              Cara Pengambilan Melon
+        <div style={{ marginBottom: '1.75rem' }}>
+          <span style={{ fontSize: '11px', fontWeight: 800, letterSpacing: '0.08em', color: '#166534', textTransform: 'uppercase', display: 'block', marginBottom: '3px' }}>
+            PANDUAN ALUR PENJEMPUTAN
+          </span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+            <h2 style={{ fontSize: '1.25rem', fontWeight: 900, color: '#0f172a', margin: 0, letterSpacing: '-0.02em' }}>
+              Cara Pengambilan Melon di Kebun
             </h2>
+            <span className="badge badge-neutral" style={{ padding: '4px 10px', fontSize: '11.5px' }}>
+              4 Langkah Praktis
+            </span>
           </div>
-          <p style={{ margin: 0, fontSize: '0.78rem', color: 'var(--text-muted)' }}>
-            Empat langkah praktis mulai dari pemesanan hingga muat buah ke armada Anda.
+          <p style={{ margin: '4px 0 0', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+            Prosedur pengambilan langsung di kebun greenhouse mitra untuk menjamin kesegaran dan akurasi timbangan.
           </p>
         </div>
 
         {/* 4 Steps Timeline Grid */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
-          gap: '1rem',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+          gap: '1.25rem',
           position: 'relative'
         }}>
           {steps.map((st, idx) => {
@@ -62,60 +67,58 @@ export default function PanduanJemputSection() {
             return (
               <div
                 key={idx}
-                className="panel"
+                className="panel panel-interactive"
                 style={{
-                  padding: '1.15rem',
-                  backgroundColor: '#f8fafc',
-                  border: '1px solid #e2e8f0',
-                  borderRadius: '12px',
+                  padding: '1.4rem',
+                  backgroundColor: '#ffffff',
+                  border: '1.5px solid #e2e8f0',
+                  borderRadius: '20px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  position: 'relative',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.03)'
+                  boxShadow: '0 4px 16px -2px rgba(15, 23, 42, 0.04)'
                 }}
               >
                 <div>
                   {/* Top Step Number & Badge */}
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                     <div style={{
-                      width: '36px',
-                      height: '36px',
-                      borderRadius: '10px',
-                      backgroundColor: '#ffffff',
-                      border: '1px solid #cbd5e1',
-                      color: '#16a34a',
+                      width: '42px',
+                      height: '42px',
+                      borderRadius: '12px',
+                      backgroundColor: '#dcfce7',
+                      color: '#166534',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       flexShrink: 0,
-                      boxShadow: '0 1px 2px rgba(0,0,0,0.04)'
+                      boxShadow: '0 2px 6px rgba(22, 101, 52, 0.1)'
                     }}>
-                      <Icon size={19} weight="bold" />
+                      <Icon size={20} weight="bold" />
                     </div>
 
                     <span style={{
-                      fontSize: '10.5px',
+                      fontSize: '11px',
                       fontWeight: 700,
                       color: '#166534',
                       backgroundColor: '#f0fdf4',
                       border: '1px solid #bbf7d0',
-                      padding: '2px 8px',
-                      borderRadius: '6px'
+                      padding: '3px 10px',
+                      borderRadius: '9999px'
                     }}>
                       {st.badge}
                     </span>
                   </div>
 
-                  <div style={{ fontSize: '10.5px', fontWeight: 800, color: '#94a3b8', letterSpacing: '0.05em', marginBottom: '3px' }}>
+                  <div style={{ fontSize: '11px', fontWeight: 800, color: '#94a3b8', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '4px' }}>
                     Tahap {st.step}
                   </div>
 
-                  <strong style={{ fontSize: '13.5px', color: '#0f172a', display: 'block', marginBottom: '0.45rem', letterSpacing: '-0.01em' }}>
+                  <strong style={{ fontSize: '15px', color: '#0f172a', display: 'block', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>
                     {st.title}
                   </strong>
 
-                  <p style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
+                  <p style={{ fontSize: '0.8rem', color: '#475569', lineHeight: 1.55, margin: 0 }}>
                     {st.desc}
                   </p>
                 </div>
@@ -124,30 +127,30 @@ export default function PanduanJemputSection() {
           })}
         </div>
 
-        {/* B2B Logistics Advisory Callout (No Emojis) */}
+        {/* Logistics Advisory Callout (Zero emojis) */}
         <div style={{
-          marginTop: '1.25rem',
-          padding: '1rem 1.25rem',
+          marginTop: '1.5rem',
+          padding: '1.25rem 1.4rem',
           backgroundColor: '#f8fafc',
-          border: '1px solid #e2e8f0',
-          borderRadius: '12px',
+          border: '1.5px solid #e2e8f0',
+          borderRadius: '16px',
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-          gap: '1rem',
-          fontSize: '11.5px',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+          gap: '1.25rem',
+          fontSize: '12px',
           color: 'var(--text-muted)'
         }}>
           <div>
-            <strong style={{ display: 'block', marginBottom: '2px', color: 'var(--text-main)' }}>Akses Masuk Armada</strong>
-            <span>Lebar gerbang greenhouse min. 3.5 meter. Aman untuk motor boks roda tiga, pick-up, blind van, hingga truk engkel 4 roda.</span>
+            <strong style={{ display: 'block', marginBottom: '3px', color: '#0f172a', fontSize: '13px' }}>Akses Masuk Armada</strong>
+            <span style={{ lineHeight: 1.5 }}>Lebar gerbang greenhouse minimal 3.5 meter. Aman untuk motor boks roda tiga, pick-up, blind van, hingga truk engkel 4 roda.</span>
           </div>
           <div>
-            <strong style={{ display: 'block', marginBottom: '2px', color: 'var(--text-main)' }}>Timbangan di Lokasi</strong>
-            <span>Setiap keranjang ditimbang bersama pengelola kebun sebelum dimuat ke armada Anda untuk akurasi data nota timbang.</span>
+            <strong style={{ display: 'block', marginBottom: '3px', color: '#0f172a', fontSize: '13px' }}>Timbangan di Lokasi</strong>
+            <span style={{ lineHeight: 1.5 }}>Setiap keranjang ditimbang bersama pengelola kebun sebelum dimuat ke armada Anda untuk akurasi data nota timbang.</span>
           </div>
           <div>
-            <strong style={{ display: 'block', marginBottom: '2px', color: 'var(--text-main)' }}>Waktu Penjemputan</strong>
-            <span>Pukul 07.00–10.30 WIB adalah jadwal penjemputan pagi yang disarankan agar kesegaran buah tetap terjaga prima.</span>
+            <strong style={{ display: 'block', marginBottom: '3px', color: '#0f172a', fontSize: '13px' }}>Waktu Penjemputan</strong>
+            <span style={{ lineHeight: 1.5 }}>Pukul 07.00–10.30 WIB adalah jadwal penjemputan pagi yang disarankan agar kesegaran buah tetap terjaga prima.</span>
           </div>
         </div>
 

@@ -115,6 +115,7 @@ export default function App() {
     <div style={{
       minHeight: '100vh',
       backgroundColor: 'var(--bg-app)',
+      backgroundImage: 'radial-gradient(ellipse at 90% 12%, rgba(245, 158, 11, 0.05) 0%, transparent 40%), radial-gradient(ellipse at 10% 40%, rgba(22, 101, 52, 0.04) 0%, transparent 45%)',
       color: 'var(--text-main)',
       display: 'flex',
       flexDirection: 'column',
@@ -159,45 +160,46 @@ export default function App() {
         />
 
         {/* Filter & Search Bar */}
-        <div className="panel filter-toolbar">
+        <div className="filter-toolbar">
           <div className="filter-left-group">
-            <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-main)', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-              Pilih Greenhouse:
+            <span style={{ fontSize: '0.82rem', fontWeight: 800, color: 'var(--text-main)', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+              <Plant size={16} weight="bold" style={{ color: 'var(--primary)' }} />
+              Greenhouse:
             </span>
             <select
               value={ghFilter}
               onChange={(e) => setGhFilter(e.target.value)}
               className="input-craft"
-              style={{ cursor: 'pointer', paddingRight: '1rem', fontWeight: 600, minWidth: '180px' }}
+              style={{ cursor: 'pointer', paddingRight: '1.25rem', fontWeight: 600, minWidth: '190px' }}
             >
-              <option value="all">Semua greenhouse</option>
-              <option value="GH-1">Greenhouse Sakura (Ciwidey)</option>
-              <option value="GH-2">Greenhouse Maribaya (Lembang)</option>
-              <option value="GH-3">Greenhouse Cisondari (Pasirjambu)</option>
+              <option value="all">Semua kebun mitra</option>
+              <option value="GH-1">Sakura (Ciwidey)</option>
+              <option value="GH-2">Maribaya (Lembang)</option>
+              <option value="GH-3">Cisondari (Pasirjambu)</option>
             </select>
 
             {/* Segmented Quick Tab Switcher */}
             <div className="filter-segmented-tabs" style={{
               display: 'inline-flex',
               backgroundColor: '#f1f5f9',
-              padding: '3px',
-              borderRadius: '8px',
-              gap: '2px',
-              marginLeft: '0.25rem'
+              padding: '4px',
+              borderRadius: '9999px',
+              gap: '3px',
+              marginLeft: '0.35rem'
             }}>
               <button
                 onClick={() => setActiveFilter('all')}
                 style={{
                   border: 'none',
-                  padding: '5px 11px',
-                  borderRadius: '6px',
-                  fontSize: '11.5px',
+                  padding: '7px 14px',
+                  borderRadius: '9999px',
+                  fontSize: '12px',
                   fontWeight: activeFilter === 'all' ? 700 : 500,
                   backgroundColor: activeFilter === 'all' ? '#ffffff' : 'transparent',
                   color: activeFilter === 'all' ? 'var(--text-main)' : 'var(--text-muted)',
-                  boxShadow: activeFilter === 'all' ? '0 1px 2px rgba(0,0,0,0.06)' : 'none',
+                  boxShadow: activeFilter === 'all' ? '0 2px 6px rgba(0,0,0,0.06)' : 'none',
                   cursor: 'pointer',
-                  transition: 'all 0.15s ease'
+                  transition: 'all 0.18s cubic-bezier(0.16, 1, 0.3, 1)'
                 }}
               >
                 Semua
@@ -206,15 +208,15 @@ export default function App() {
                 onClick={() => setActiveFilter('matang')}
                 style={{
                   border: 'none',
-                  padding: '5px 11px',
-                  borderRadius: '6px',
-                  fontSize: '11.5px',
+                  padding: '7px 14px',
+                  borderRadius: '9999px',
+                  fontSize: '12px',
                   fontWeight: activeFilter === 'matang' ? 700 : 500,
                   backgroundColor: activeFilter === 'matang' ? '#ffffff' : 'transparent',
                   color: activeFilter === 'matang' ? 'var(--status-ready)' : 'var(--text-muted)',
-                  boxShadow: activeFilter === 'matang' ? '0 1px 2px rgba(0,0,0,0.06)' : 'none',
+                  boxShadow: activeFilter === 'matang' ? '0 2px 6px rgba(0,0,0,0.06)' : 'none',
                   cursor: 'pointer',
-                  transition: 'all 0.15s ease'
+                  transition: 'all 0.18s cubic-bezier(0.16, 1, 0.3, 1)'
                 }}
               >
                 Matang ({filteredSiapJual.length})
@@ -223,15 +225,15 @@ export default function App() {
                 onClick={() => setActiveFilter('mengkal')}
                 style={{
                   border: 'none',
-                  padding: '5px 11px',
-                  borderRadius: '6px',
-                  fontSize: '11.5px',
+                  padding: '7px 14px',
+                  borderRadius: '9999px',
+                  fontSize: '12px',
                   fontWeight: activeFilter === 'mengkal' ? 700 : 500,
                   backgroundColor: activeFilter === 'mengkal' ? '#ffffff' : 'transparent',
                   color: activeFilter === 'mengkal' ? 'var(--status-upcoming)' : 'var(--text-muted)',
-                  boxShadow: activeFilter === 'mengkal' ? '0 1px 2px rgba(0,0,0,0.06)' : 'none',
+                  boxShadow: activeFilter === 'mengkal' ? '0 2px 6px rgba(0,0,0,0.06)' : 'none',
                   cursor: 'pointer',
-                  transition: 'all 0.15s ease'
+                  transition: 'all 0.18s cubic-bezier(0.16, 1, 0.3, 1)'
                 }}
               >
                 Mengkal ({filteredMengkal.length})
@@ -242,10 +244,10 @@ export default function App() {
           {/* Search Box with Clear Button */}
           <div className="filter-search-box">
             <MagnifyingGlass
-              size={15}
+              size={16}
               style={{
                 position: 'absolute',
-                left: '11px',
+                left: '14px',
                 top: '50%',
                 transform: 'translateY(-50%)',
                 color: 'var(--text-dim)'
@@ -253,18 +255,18 @@ export default function App() {
             />
             <input
               type="text"
-              placeholder="Cari greenhouse, alamat..."
+              placeholder="Cari kebun, alamat..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="input-craft"
-              style={{ width: '100%', paddingLeft: '2rem', paddingRight: searchQuery ? '2rem' : '0.75rem' }}
+              style={{ width: '100%', paddingLeft: '2.3rem', paddingRight: searchQuery ? '2.2rem' : '1rem' }}
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
                 style={{
                   position: 'absolute',
-                  right: '8px',
+                  right: '12px',
                   top: '50%',
                   transform: 'translateY(-50%)',
                   border: 'none',
@@ -278,7 +280,7 @@ export default function App() {
                 }}
                 title="Hapus pencarian"
               >
-                <X size={13} weight="bold" />
+                <X size={14} weight="bold" />
               </button>
             )}
           </div>
