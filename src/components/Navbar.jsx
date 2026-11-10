@@ -1,5 +1,6 @@
 import React from 'react';
-import { Plant, CheckCircle, Clock, MapPin } from '@phosphor-icons/react';
+import { CheckCircle, Clock, MapPin } from '@phosphor-icons/react';
+import tanigoLogo from '../assets/tanigo-logo.png';
 
 export default function Navbar({ readyCount = 0, mengkalCount = 0 }) {
   return (
@@ -21,22 +22,19 @@ export default function Navbar({ readyCount = 0, mengkalCount = 0 }) {
       }}>
         {/* Brand */}
         <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', textDecoration: 'none' }}>
-          <div style={{
-            width: '36px',
-            height: '36px',
-            borderRadius: '9px',
-            background: 'linear-gradient(135deg, #166534 0%, #14532d 100%)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#ffffff',
-            flexShrink: 0,
-            boxShadow: '0 2px 6px rgba(22, 101, 52, 0.25)'
-          }}>
-            <Plant size={21} weight="bold" />
-          </div>
+          <img
+            src={tanigoLogo}
+            alt="Tanigo Logo"
+            style={{
+              width: '36px',
+              height: '36px',
+              objectFit: 'contain',
+              borderRadius: '8px',
+              flexShrink: 0
+            }}
+          />
           <div>
-            <span style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--text-main)', letterSpacing: '-0.02em', display: 'block' }}>
+            <span style={{ fontSize: '1.18rem', fontWeight: 800, color: 'var(--text-main)', letterSpacing: '-0.02em', display: 'block' }}>
               Tanigo
             </span>
           </div>

@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import { fetchB2BCommodities } from './services/api';
 import { mockB2BData } from './data/mockFallback';
 import { MagnifyingGlass, Plant, X } from '@phosphor-icons/react';
+import tanigoLogo from './assets/tanigo-logo.png';
 
 // Standarisasi nama greenhouse sesuai Brand Sheet
 const normalizeGreenhouseItem = (item) => {
@@ -94,19 +95,17 @@ export default function App() {
         color: 'var(--text-muted)',
         fontSize: '0.85rem'
       }}>
-        <div style={{
-          width: '38px',
-          height: '38px',
-          borderRadius: '9px',
-          backgroundColor: 'var(--primary)',
-          color: '#ffffff',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          boxShadow: '0 2px 5px rgba(22, 101, 52, 0.25)'
-        }}>
-          <Plant size={24} weight="bold" />
-        </div>
+        <img
+          src={tanigoLogo}
+          alt="Tanigo Logo"
+          style={{
+            width: '44px',
+            height: '44px',
+            objectFit: 'contain',
+            borderRadius: '9px',
+            boxShadow: '0 2px 8px rgba(22, 101, 52, 0.15)'
+          }}
+        />
         <span style={{ fontWeight: 600, color: 'var(--text-main)' }}>Memuat katalog panen melon...</span>
       </div>
     );

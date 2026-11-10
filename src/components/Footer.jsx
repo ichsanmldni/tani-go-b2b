@@ -1,5 +1,6 @@
 import React from 'react';
-import { Plant, MapPin, Phone, EnvelopeSimple } from '@phosphor-icons/react';
+import { MapPin, Phone, EnvelopeSimple } from '@phosphor-icons/react';
+import tanigoLogo from '../assets/tanigo-logo.png';
 
 export default function Footer() {
   return (
@@ -22,19 +23,18 @@ export default function Footer() {
         {/* Col 1: Brand Info */}
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.6rem' }}>
-            <div style={{
-              width: '28px',
-              height: '28px',
-              borderRadius: '7px',
-              backgroundColor: 'var(--primary)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#ffffff'
-            }}>
-              <Plant size={18} weight="bold" />
-            </div>
-            <strong style={{ fontSize: '1rem', color: 'var(--text-main)', letterSpacing: '-0.02em' }}>
+            <img
+              src={tanigoLogo}
+              alt="Tanigo Logo"
+              style={{
+                width: '30px',
+                height: '30px',
+                objectFit: 'contain',
+                borderRadius: '6px',
+                flexShrink: 0
+              }}
+            />
+            <strong style={{ fontSize: '1.05rem', color: 'var(--text-main)', letterSpacing: '-0.02em' }}>
               Tanigo
             </strong>
           </div>
