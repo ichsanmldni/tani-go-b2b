@@ -45,7 +45,7 @@ export default function Navbar() {
             onClick={() => setActiveTab('lokasi')}
             className={`nav-link ${activeTab === 'lokasi' ? 'active' : ''}`}
           >
-            Lokasi Greenhouse
+            Lokasi Kebun
           </a>
           <a
             href="#panduan"
@@ -86,7 +86,7 @@ export default function Navbar() {
           </a>
 
           <a href="#lokasi-kebun" onClick={closeMenu} className="navbar-mobile-link">
-            <span>Lokasi Greenhouse</span>
+            <span>Lokasi Kebun</span>
           </a>
 
           <a href="#panduan" onClick={closeMenu} className="navbar-mobile-link">

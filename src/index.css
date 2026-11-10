@@ -262,6 +262,15 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
 .navbar-mobile-link {
   display: flex;
   align-items: center;

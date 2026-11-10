@@ -12,7 +12,7 @@ export default function GreenhouseMapSection({
   const greenhouses = [
     {
       id: 'GH-1',
-      title: 'Greenhouse Sakura (Ciwidey)',
+      title: 'Kebun Sakura (Ciwidey)',
       location: 'Alamendah, Rancabali, Kab. Bandung',
       elevation: '1.250 mdpl',
       temperature: '16 – 22°C',
@@ -26,7 +26,7 @@ export default function GreenhouseMapSection({
     },
     {
       id: 'GH-2',
-      title: 'Greenhouse Maribaya (Lembang)',
+      title: 'Kebun Maribaya (Lembang)',
       location: 'Kayuambon, Lembang, Kab. Bandung Barat',
       elevation: '1.320 mdpl',
       temperature: '15 – 21°C',
@@ -40,7 +40,7 @@ export default function GreenhouseMapSection({
     },
     {
       id: 'GH-3',
-      title: 'Greenhouse Cisondari (Pasirjambu)',
+      title: 'Kebun Cisondari (Pasirjambu)',
       location: 'Cisondari, Pasirjambu, Kab. Bandung',
       elevation: '1.150 mdpl',
       temperature: '18 – 25°C',
@@ -81,7 +81,7 @@ export default function GreenhouseMapSection({
               </span>
             </div>
             <p style={{ margin: '4px 0 0', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-              Tiga lokasi kebun greenhouse mitra aktif di dataran tinggi Jawa Barat dengan sistem monitoring ketersediaan langsung.
+              Tiga lokasi kebun mitra aktif di dataran tinggi Jawa Barat dengan sistem monitoring ketersediaan langsung.
             </p>
           </div>
         </div>
@@ -135,7 +135,7 @@ export default function GreenhouseMapSection({
           </div>
         </div>
 
-        {/* 3 Greenhouse Visual Cards */}
+        {/* 3 Kebun Mitra Visual Cards */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
@@ -290,7 +290,7 @@ export default function GreenhouseMapSection({
                   </div>
                 </div>
 
-                {/* Bottom Actions for THIS specific greenhouse */}
+                {/* Bottom Actions for THIS specific kebun */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', paddingTop: '0.85rem', borderTop: '1px solid #f1f5f9' }}>
                   <a
                     href={gh.gmaps}

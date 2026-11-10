@@ -175,7 +175,7 @@ export default function KpiSummary({
           ></div>
         </div>
 
-        {/* Greenhouse mini breakdown pills */}
+        {/* Kebun mitra mini breakdown pills */}
         <div className="kpi-breakdown-row" style={{ marginTop: '10px' }}>
           <div className="kpi-breakdown-item" style={{ borderRadius: '9999px', padding: '5px 12px' }}>
             <span>Sakura (Ciwidey):</span>

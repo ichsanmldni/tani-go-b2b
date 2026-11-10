@@ -8,7 +8,7 @@ export default function PanduanJemputSection() {
       badge: 'Kontak Langsung',
       icon: Phone,
       title: 'Pilih dan Pesan',
-      desc: 'Pilih greenhouse tujuan lalu hubungi nomor pengelola kebun untuk konfirmasi ketersediaan melon.'
+      desc: 'Pilih kebun tujuan lalu hubungi nomor pengelola kebun untuk konfirmasi ketersediaan melon.'
     },
     {
       step: '02',
@@ -22,7 +22,7 @@ export default function PanduanJemputSection() {
       badge: 'Navigasi Maps',
       icon: MapPin,
       title: 'Tuju Lokasi Kebun',
-      desc: 'Gunakan tautan Google Maps untuk navigasi langsung ke pintu gerbang masuk greenhouse kebun mitra.'
+      desc: 'Gunakan tautan Google Maps untuk navigasi langsung ke pintu gerbang masuk kebun mitra.'
     },
     {
       step: '04',
@@ -51,7 +51,7 @@ export default function PanduanJemputSection() {
             </span>
           </div>
           <p style={{ margin: '4px 0 0', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-            Prosedur pengambilan langsung di kebun greenhouse mitra untuk menjamin kesegaran dan akurasi timbangan.
+            Prosedur pengambilan langsung di kebun mitra untuk menjamin kesegaran dan akurasi timbangan.
           </p>
         </div>
 
@@ -142,7 +142,7 @@ export default function PanduanJemputSection() {
         }}>
           <div>
             <strong style={{ display: 'block', marginBottom: '3px', color: '#0f172a', fontSize: '13px' }}>Akses Masuk Armada</strong>
-            <span style={{ lineHeight: 1.5 }}>Lebar gerbang greenhouse minimal 3.5 meter. Aman untuk motor boks roda tiga, pick-up, blind van, hingga truk engkel 4 roda.</span>
+            <span style={{ lineHeight: 1.5 }}>Lebar gerbang kebun minimal 3.5 meter. Aman untuk motor boks roda tiga, pick-up, blind van, hingga truk engkel 4 roda.</span>
           </div>
           <div>
             <strong style={{ display: 'block', marginBottom: '3px', color: '#0f172a', fontSize: '13px' }}>Timbangan di Lokasi</strong>

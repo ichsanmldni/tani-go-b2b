@@ -1,5 +1,6 @@
 import React from 'react';
 import heroMelonPlate from '../assets/hero-melon-plate.jpg';
+import { Plant, CheckCircle, ShieldCheck } from '@phosphor-icons/react';
 
 export default function HeroSection() {
   return (
@@ -28,9 +29,63 @@ export default function HeroSection() {
             </h2>
 
             {/* Description */}
-            <p className="hero-fruit-desc" style={{ marginBottom: 0 }}>
+            <p className="hero-fruit-desc" style={{ marginBottom: '1.5rem' }}>
               Monitoring langsung ketersediaan melon mitra kebun secara real-time. Amankan buah matang yang siap diambil hari ini atau pesan fase mengkal langsung dari pengelola kebun mitra kami.
             </p>
+
+            {/* Quality & Trust Badges */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.65rem',
+              flexWrap: 'wrap'
+            }}>
+              <span style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '5px',
+                padding: '6px 14px',
+                borderRadius: '9999px',
+                backgroundColor: '#f0fdf4',
+                border: '1px solid #bbf7d0',
+                fontSize: '12px',
+                fontWeight: 700,
+                color: '#166534'
+              }}>
+                <Plant size={15} weight="fill" />
+                Hidroponik Dataran Tinggi
+              </span>
+              <span style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '5px',
+                padding: '6px 14px',
+                borderRadius: '9999px',
+                backgroundColor: '#fffbeb',
+                border: '1px solid #fde68a',
+                fontSize: '12px',
+                fontWeight: 700,
+                color: '#92400e'
+              }}>
+                <CheckCircle size={15} weight="fill" />
+                Timbang Transparan di Kebun
+              </span>
+              <span style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '5px',
+                padding: '6px 14px',
+                borderRadius: '9999px',
+                backgroundColor: '#f8fafc',
+                border: '1px solid #e2e8f0',
+                fontSize: '12px',
+                fontWeight: 700,
+                color: '#334155'
+              }}>
+                <ShieldCheck size={15} weight="fill" />
+                Data Terverifikasi AI
+              </span>
+            </div>
           </div>
 
           {/* Right Column: Studio-Shot Fresh Melon on White Plate */}
@@ -41,6 +96,52 @@ export default function HeroSection() {
                 alt="Piring Buah Melon Hidroponik Segar TaniGo"
                 className="hero-fruit-plate-image"
               />
+
+              {/* Floating Fresh Pill 1: Top Right */}
+              <div style={{
+                position: 'absolute',
+                top: '12px',
+                right: '-8px',
+                backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                backdropFilter: 'blur(8px)',
+                border: '1px solid #dcfce7',
+                borderRadius: '9999px',
+                padding: '7px 13px',
+                boxShadow: '0 10px 25px -4px rgba(22, 101, 52, 0.15)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                fontSize: '11.5px',
+                fontWeight: 700,
+                color: '#166534',
+                animation: 'floatSlow 4s ease-in-out infinite'
+              }}>
+                <Plant size={15} weight="fill" style={{ color: '#16a34a' }} />
+                <span>Panen Segar Harian</span>
+              </div>
+
+              {/* Floating Fresh Pill 2: Bottom Left */}
+              <div style={{
+                position: 'absolute',
+                bottom: '12px',
+                left: '-8px',
+                backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                backdropFilter: 'blur(8px)',
+                border: '1px solid #fef3c7',
+                borderRadius: '9999px',
+                padding: '7px 13px',
+                boxShadow: '0 10px 25px -4px rgba(217, 119, 6, 0.15)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                fontSize: '11.5px',
+                fontWeight: 700,
+                color: '#b45309',
+                animation: 'floatSlow 4s ease-in-out infinite 2s'
+              }}>
+                <span className="pulse-dot-amber"></span>
+                <span>Manis &amp; Renyah Alami</span>
+              </div>
             </div>
           </div>
 

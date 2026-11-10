@@ -39,27 +39,27 @@ export default function Footer() {
             </strong>
           </div>
           <p style={{ margin: '0 0 0.6rem', lineHeight: 1.5, color: 'var(--text-muted)' }}>
-            Menghubungkan pembeli langsung dengan jaringan greenhouse melon hidroponik di Jawa Barat.
+            Menghubungkan pembeli langsung dengan jaringan kebun melon hidroponik di Jawa Barat.
           </p>
         </div>
 
-        {/* Col 2: Jaringan Greenhouse */}
+        {/* Col 2: Jaringan Kebun Mitra */}
         <div>
           <strong style={{ fontSize: '0.85rem', color: 'var(--text-main)', display: 'block', marginBottom: '0.6rem' }}>
-            Jaringan Greenhouse
+            Jaringan Kebun Mitra
           </strong>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.4rem' }}>
               <MapPin size={15} weight="fill" style={{ color: '#dc2626', flexShrink: 0, marginTop: '2px' }} />
-              <span><strong>Greenhouse Sakura (Ciwidey)</strong></span>
+              <span><strong>Kebun Sakura (Ciwidey)</strong></span>
             </li>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.4rem' }}>
               <MapPin size={15} weight="fill" style={{ color: '#dc2626', flexShrink: 0, marginTop: '2px' }} />
-              <span><strong>Greenhouse Maribaya (Lembang)</strong></span>
+              <span><strong>Kebun Maribaya (Lembang)</strong></span>
             </li>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.4rem' }}>
               <MapPin size={15} weight="fill" style={{ color: '#dc2626', flexShrink: 0, marginTop: '2px' }} />
-              <span><strong>Greenhouse Cisondari (Pasirjambu)</strong></span>
+              <span><strong>Kebun Cisondari (Pasirjambu)</strong></span>
             </li>
           </ul>
         </div>

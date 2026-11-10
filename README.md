@@ -1,6 +1,6 @@
 # TaniGo — Marketplace Melon Hidroponik
 
-Platform web monitoring ketersediaan dan pemesanan melon mitra kebun langsung dari 3 kebun greenhouse di Jawa Barat.
+Platform web monitoring ketersediaan dan pemesanan melon mitra kebun langsung dari 3 kebun mitra di Jawa Barat.
 
 ---
 
@@ -29,7 +29,7 @@ Frontend ini dibangun dengan **React 18** dan **Vite** untuk memberikan performa
 - **Katalog Melon Matang**: Informasi ketersediaan buah matang siap diambil hari ini beserta lokasi kebun.
 - **Katalog Melon Mengkal**: Estimasi masa panen (2–4 hari) untuk kebutuhan pemesanan panen mendatang.
 - **Sebaran Lokasi Mitra Kebun**: Koordinat Google Maps, elevasi, suhu rata-rata, dan kontak penanggung jawab kebun.
-- **Panduan Penjemputan Langsung**: Prosedur 4 langkah penjemputan buah langsung di greenhouse.
+- **Panduan Penjemputan Langsung**: Prosedur 4 langkah penjemputan buah langsung di kebun mitra.
 - **Pemesanan Cepat via WhatsApp**: Tautan interaktif ke pengelola kebun dengan pesan yang telah tersusun otomatis.
 
 ---
@@ -105,7 +105,7 @@ Frontend ini dilengkapi dengan **mekanisme fallback otomatis**. Jika backend Fla
 > **Cocok untuk:** Desainer UI/UX, pengembang frontend, atau pengujian tampilan cepat tanpa perlu *setup* environment Python.
 
 ### Mode 2: Terintegrasi Backend Flask
-Untuk melihat data dinamis hasil deteksi kamera/sensor greenhouse:
+Untuk melihat data dinamis hasil deteksi kamera/sensor kebun mitra:
 1. Pastikan repositori backend `kematangan-dan-penyakit` berada di direktori yang sejajar (`../kematangan-dan-penyakit`).
 2. Jalankan backend Flask (port `5000`):
    ```bash
@@ -147,7 +147,7 @@ b2b-marketplace-melon/
 │   ├── components/             # Komponen antarmuka (UI)
 │   │   ├── FaqSection.jsx              # Komponen tanya jawab umum
 │   │   ├── Footer.jsx                  # Footer informasi hak cipta & kontak
-│   │   ├── GreenhouseMapSection.jsx    # Kartu detail & sebaran lokasi greenhouse
+│   │   ├── GreenhouseMapSection.jsx    # Kartu detail & sebaran lokasi kebun mitra
 │   │   ├── HeroSection.jsx             # Bagian atas (headline, CTA utama)
 │   │   ├── KpiSummary.jsx              # Metrik pasokan (Matang, Mengkal, Kebun Aktif)
 │   │   ├── MengkalSection.jsx          # Tabel & kartu booking melon mengkal
@@ -186,7 +186,7 @@ b2b-marketplace-melon/
 3. **Penyaringan Data (`src/App.jsx`)**:
    Pengguna dapat memfilter berdasarkan:
    - Status kematangan: **Semua**, **Matang**, atau **Mengkal**.
-   - Lokasi kebun: **Semua Greenhouse**, atau memilih salah satu greenhouse spesifik.
+   - Lokasi kebun: **Semua Kebun Mitra**, atau memilih salah satu kebun spesifik.
    - Kata kunci pencarian: Pencarian nama kebun atau alamat secara *real-time*.
 
 ---
@@ -200,10 +200,10 @@ Bagi kontributor yang melakukan perubahan kode atau teks, wajib mematuhi standar
    - `Mengkal` (buah dalam fase pematangan, estimasi 2–4 hari).
    - `Mentah` (buah belum siap panen).
    *(Dilarang menggunakan istilah nonbaku seperti "petik", "dipetik", atau "siap petik")*.
-3. **Nama Resmi Greenhouse**:
-   - `Greenhouse Sakura (Ciwidey)`
-   - `Greenhouse Maribaya (Lembang)`
-   - `Greenhouse Cisondari (Pasirjambu)`
+3. **Nama Resmi Kebun Mitra**:
+   - `Kebun Sakura (Ciwidey)`
+   - `Kebun Maribaya (Lembang)`
+   - `Kebun Cisondari (Pasirjambu)`
 4. **Peniadaan Varietas Karangan**: Produk diposisikan murni sebagai **Melon Hidroponik**. Hindari mengarang nama-nama varietas buatan.
 5. **Palet Warna Utama**:
    - Hijau Daun (Primary): `#166534`

@@ -53,7 +53,7 @@ export default function SiapJualSection({ items = [] }) {
               </span>
             </div>
             <p style={{ margin: '4px 0 0', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-              Melon matang hasil panen mitra kebun yang siap diambil hari ini langsung dari greenhouse.
+              Melon matang hasil panen mitra kebun yang siap diambil hari ini langsung dari kebun mitra.
             </p>
           </div>
 
@@ -250,7 +250,7 @@ export default function SiapJualSection({ items = [] }) {
             <table className="table-craft">
               <thead>
                 <tr>
-                  <th style={{ width: '26%', minWidth: '180px' }}>Greenhouse</th>
+                  <th style={{ width: '26%', minWidth: '180px' }}>Kebun Mitra</th>
                   <th style={{ width: '38%', minWidth: '240px' }}>Alamat Kebun</th>
                   <th style={{ width: '12%', minWidth: '110px', textAlign: 'center' }}>Jumlah Matang</th>
                   <th style={{ width: '12%', minWidth: '130px', textAlign: 'center' }}>Lokasi Maps</th>
@@ -268,7 +268,7 @@ export default function SiapJualSection({ items = [] }) {
                   safeItems.map((item) => (
                     <tr key={item.id}>
 
-                      {/* 1. Greenhouse */}
+                      {/* 1. Kebun Mitra */}
                       <td>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                           <img

@@ -23,7 +23,7 @@ export default function FaqSection() {
     },
     {
       q: 'Bagaimana sistem pembayaran pemesanan melon?',
-      a: 'Pembayaran dilakukan setelah proses penimbangan buah selesai di greenhouse melalui transfer bank langsung (QRIS / Virtual Account / Transfer Bank) atau tunai sebelum buah dimuat ke armada Anda.'
+      a: 'Pembayaran dilakukan setelah proses penimbangan buah selesai di kebun melalui transfer bank langsung (QRIS / Virtual Account / Transfer Bank) atau tunai sebelum buah dimuat ke armada Anda.'
     },
     {
       q: 'Bagaimana memastikan kualitas dan kondisi fisik buah?',

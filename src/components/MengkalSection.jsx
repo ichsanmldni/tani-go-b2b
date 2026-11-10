@@ -64,7 +64,7 @@ export default function MengkalSection({ items = [] }) {
               </span>
             </div>
             <p style={{ margin: '4px 0 0', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-              Melon yang sedang memasuki fase kematangan akhir di pohon hidroponik. Amankan pemesanan sebelum jadwal panen tiba.
+              Melon yang sedang memasuki fase kematangan akhir di kebun hidroponik mitra. Amankan pemesanan sebelum jadwal panen tiba.
             </p>
           </div>
 
@@ -286,7 +286,7 @@ export default function MengkalSection({ items = [] }) {
             <table className="table-craft">
               <thead>
                 <tr>
-                  <th style={{ width: '24%', minWidth: '170px' }}>Greenhouse</th>
+                  <th style={{ width: '24%', minWidth: '170px' }}>Kebun Mitra</th>
                   <th style={{ width: '35%', minWidth: '230px' }}>Alamat Kebun</th>
                   <th style={{ width: '12%', minWidth: '110px', textAlign: 'center' }}>Jumlah Mengkal</th>
                   <th style={{ width: '16%', minWidth: '145px', textAlign: 'center' }}>Estimasi Panen</th>
@@ -305,7 +305,7 @@ export default function MengkalSection({ items = [] }) {
                   safeItems.map((item) => (
                     <tr key={item.id}>
 
-                      {/* 1. Greenhouse */}
+                      {/* 1. Kebun Mitra */}
                       <td>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                           <img

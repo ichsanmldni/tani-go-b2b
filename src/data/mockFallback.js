@@ -10,7 +10,7 @@ export const mockB2BData = {
     {
       id: "GH-1-MATANG",
       greenhouse_id: "GH-1",
-      nama_kebun: "Greenhouse Sakura (Ciwidey)",
+      nama_kebun: "Kebun Sakura (Ciwidey)",
       alamat: "Jl. Raya Ciwidey - Patengan Km 7, Alamendah, Rancabali, Kab. Bandung, Jawa Barat 40973",
       link_gmaps: "https://maps.google.com/?q=-7.135248,107.411623",
       jumlah_matang: 13,
@@ -20,7 +20,7 @@ export const mockB2BData = {
     {
       id: "GH-2-MATANG",
       greenhouse_id: "GH-2",
-      nama_kebun: "Greenhouse Maribaya (Lembang)",
+      nama_kebun: "Kebun Maribaya (Lembang)",
       alamat: "Jl. Maribaya No. 108, Kayuambon, Kec. Lembang, Kab. Bandung Barat, Jawa Barat 40391",
       link_gmaps: "https://maps.google.com/?q=-6.816432,107.625121",
       jumlah_matang: 6,
@@ -30,7 +30,7 @@ export const mockB2BData = {
     {
       id: "GH-3-MATANG",
       greenhouse_id: "GH-3",
-      nama_kebun: "Greenhouse Cisondari (Pasirjambu)",
+      nama_kebun: "Kebun Cisondari (Pasirjambu)",
       alamat: "Jl. Stasiun Cisondari No. 45, Pasirjambu, Kec. Pasirjambu, Kab. Bandung, Jawa Barat 40972",
       link_gmaps: "https://maps.google.com/?q=-7.098712,107.476534",
       jumlah_matang: 19,
@@ -42,7 +42,7 @@ export const mockB2BData = {
     {
       id: "GH-1-MENGKAL",
       greenhouse_id: "GH-1",
-      nama_kebun: "Greenhouse Sakura (Ciwidey)",
+      nama_kebun: "Kebun Sakura (Ciwidey)",
       alamat: "Jl. Raya Ciwidey - Patengan Km 7, Alamendah, Rancabali, Kab. Bandung, Jawa Barat 40973",
       link_gmaps: "https://maps.google.com/?q=-7.135248,107.411623",
       jumlah_mengkal: 13,
@@ -53,7 +53,7 @@ export const mockB2BData = {
     {
       id: "GH-2-MENGKAL",
       greenhouse_id: "GH-2",
-      nama_kebun: "Greenhouse Maribaya (Lembang)",
+      nama_kebun: "Kebun Maribaya (Lembang)",
       alamat: "Jl. Maribaya No. 108, Kayuambon, Kec. Lembang, Kab. Bandung Barat, Jawa Barat 40391",
       link_gmaps: "https://maps.google.com/?q=-6.816432,107.625121",
       jumlah_mengkal: 11,
@@ -64,7 +64,7 @@ export const mockB2BData = {
     {
       id: "GH-3-MENGKAL",
       greenhouse_id: "GH-3",
-      nama_kebun: "Greenhouse Cisondari (Pasirjambu)",
+      nama_kebun: "Kebun Cisondari (Pasirjambu)",
       alamat: "Jl. Stasiun Cisondari No. 45, Pasirjambu, Kec. Pasirjambu, Kab. Bandung, Jawa Barat 40972",
       link_gmaps: "https://maps.google.com/?q=-7.098712,107.476534",
       jumlah_mengkal: 8,
