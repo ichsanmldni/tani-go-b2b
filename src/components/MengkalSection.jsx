@@ -55,7 +55,7 @@ export default function MengkalSection({ items = [] }) {
         <div className="panel-header-responsive" style={{ padding: '1.25rem 1.5rem', background: '#ffffff', borderBottom: '1px solid #f1f5f9' }}>
           <div>
             <span style={{ fontSize: '11px', fontWeight: 800, letterSpacing: '0.08em', color: '#b45309', textTransform: 'uppercase', display: 'block', marginBottom: '3px' }}>
-              PANTAUAN JADWAL MASAK &middot; TAHAP MENGKAL
+              PANTAUAN JADWAL PANEN &middot; TAHAP MENGKAL
             </span>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', flexWrap: 'wrap' }}>
               <h2 style={{ fontSize: '1.25rem', fontWeight: 900, color: '#0f172a', margin: 0, letterSpacing: '-0.02em' }}>
@@ -162,7 +162,7 @@ export default function MengkalSection({ items = [] }) {
                         gap: '4px'
                       }}>
                         <Clock size={12} weight="bold" />
-                        <span>Fase Masak</span>
+                        <span>Booking Panen</span>
                       </div>
                     </div>
 
