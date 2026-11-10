@@ -218,16 +218,45 @@ export default function SiapJualSection({ items = [] }) {
                 <div key={item.id} className="commodity-card">
                   <div>
                     {/* Card Top */}
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.65rem' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.4rem' }}>
                       <span className="badge badge-success" style={{ fontSize: '11px' }}>
                         <span className="pulse-dot-green"></span>
                         Matang: <strong className="font-mono">{item.jumlah_matang}</strong> Buah
                       </span>
+                      <span style={{
+                        fontSize: '10.5px',
+                        fontWeight: 700,
+                        color: 'var(--primary)',
+                        backgroundColor: 'var(--primary-subtle)',
+                        border: '1px solid var(--primary-border)',
+                        padding: '2px 7px',
+                        borderRadius: '9999px'
+                      }}>
+                        13–15° Brix • Grade A
+                      </span>
                     </div>
 
-                    <strong style={{ fontSize: '14px', color: 'var(--text-main)', display: 'block', lineHeight: 1.3, marginBottom: '0.65rem' }}>
+                    <strong style={{ fontSize: '14.5px', color: 'var(--text-main)', display: 'block', lineHeight: 1.3, marginBottom: '0.5rem' }}>
                       {item.nama_kebun}
                     </strong>
+
+                    {/* Quality Specs Pill Strip */}
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      marginBottom: '0.75rem',
+                      fontSize: '11px',
+                      color: 'var(--text-muted)',
+                      flexWrap: 'wrap'
+                    }}>
+                      <span style={{ background: '#f8fafc', padding: '3px 7px', borderRadius: '5px', border: '1px solid #e2e8f0' }}>
+                        Bobot: <strong>1.8–2.4 kg</strong>
+                      </span>
+                      <span style={{ background: '#f0fdf4', color: '#166534', padding: '3px 7px', borderRadius: '5px', border: '1px solid #bbf7d0', fontWeight: 600 }}>
+                        Siap Ambil Hari Ini
+                      </span>
+                    </div>
 
                     <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.4rem', fontSize: '11.5px', color: 'var(--text-muted)', lineHeight: 1.45, marginBottom: '0.75rem' }}>
                       <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.4rem' }}>
@@ -282,12 +311,12 @@ export default function SiapJualSection({ items = [] }) {
 
                     <button
                       onClick={() => handleOrderWhatsApp(item)}
-                      className="btn-primary-craft"
-                      style={{ flex: 1.25, justifyContent: 'center', padding: '9px 10px', minHeight: '42px' }}
-                      title="Pesan via WhatsApp"
+                      className="btn-whatsapp"
+                      style={{ flex: 1.35, minHeight: '42px' }}
+                      title="Pesan via WhatsApp pengelola"
                     >
                       <WhatsappLogo size={16} weight="fill" />
-                      <span>Pesan Melon</span>
+                      <span>Pesan via WA</span>
                     </button>
                   </div>
                 </div>

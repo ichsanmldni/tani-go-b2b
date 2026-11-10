@@ -84,6 +84,43 @@ export default function GreenhouseMapSection({
           </div>
         </div>
 
+        {/* Visual Elevation & Terroir Summary Banner */}
+        <div style={{
+          backgroundColor: '#f8fafc',
+          border: '1px solid #e2e8f0',
+          borderRadius: '12px',
+          padding: '1rem 1.25rem',
+          marginBottom: '1.5rem',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: '1rem'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Mountains size={22} weight="fill" style={{ color: 'var(--primary)' }} />
+            <div>
+              <strong style={{ fontSize: '13px', color: 'var(--text-main)', display: 'block' }}>
+                Dataran Tinggi Bandung Raya (1.150 – 1.320 mdpl)
+              </strong>
+              <small style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
+                Fluktuasi suhu siang-malam yang sejuk memicu akumulasi gula (Brix) alami yang lebih tinggi.
+              </small>
+            </div>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+            <span style={{ fontSize: '11px', background: '#ffffff', padding: '3px 8px', borderRadius: '6px', border: '1px solid #cbd5e1', fontWeight: 600 }}>
+              Ciwidey: 1.250 mdpl
+            </span>
+            <span style={{ fontSize: '11px', background: '#ffffff', padding: '3px 8px', borderRadius: '6px', border: '1px solid #cbd5e1', fontWeight: 600 }}>
+              Lembang: 1.320 mdpl
+            </span>
+            <span style={{ fontSize: '11px', background: '#ffffff', padding: '3px 8px', borderRadius: '6px', border: '1px solid #cbd5e1', fontWeight: 600 }}>
+              Pasirjambu: 1.150 mdpl
+            </span>
+          </div>
+        </div>
+
         {/* 3 Greenhouse Visual Cards */}
         <div style={{
           display: 'grid',
@@ -101,17 +138,38 @@ export default function GreenhouseMapSection({
                 key={gh.id}
                 className="panel"
                 style={{
-                  padding: '1.25rem',
+                  padding: '1.35rem 1.25rem',
                   backgroundColor: '#ffffff',
                   border: '1px solid var(--border-subtle)',
                   borderRadius: '14px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
-                  boxShadow: '0 1px 3px rgba(27, 42, 34, 0.03)'
+                  transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
+                  boxShadow: 'var(--shadow-xs)',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-3px)';
+                  e.currentTarget.style.boxShadow = '0 10px 25px -5px rgba(27, 42, 34, 0.08)';
+                  e.currentTarget.style.borderColor = '#cbd5e1';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = 'var(--shadow-xs)';
+                  e.currentTarget.style.borderColor = 'var(--border-subtle)';
                 }}
               >
+                {/* Top Accent Stripe */}
+                <div style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: '3.5px',
+                  backgroundColor: gh.color
+                }} />
                 <div>
                   {/* Card Top Title & Variety */}
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem' }}>

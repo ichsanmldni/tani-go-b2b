@@ -246,10 +246,10 @@ export default function MengkalSection({ items = [] }) {
               </div>
             ) : (
               safeItems.map((item) => (
-                <div key={item.id} className="commodity-card">
+                <div key={item.id} className="commodity-card upcoming-card">
                   <div>
                     {/* Card Top */}
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.65rem' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.4rem' }}>
                       <span className="badge badge-warning" style={{ fontSize: '11px' }}>
                         <span className="pulse-dot-amber"></span>
                         Mengkal: <strong className="font-mono">{item.jumlah_mengkal}</strong> Buah
@@ -262,18 +262,36 @@ export default function MengkalSection({ items = [] }) {
                         fontWeight: 700,
                         color: 'var(--status-upcoming)',
                         backgroundColor: 'var(--status-upcoming-bg)',
-                        padding: '2px 7px',
-                        borderRadius: '6px',
+                        padding: '2px 8px',
+                        borderRadius: '9999px',
                         border: '1px solid var(--status-upcoming-border)'
                       }}>
-                        <CalendarBlank size={12} />
-                        <span>{item.perkiraan_masa_panen || '2–4 Hari'}</span>
+                        <CalendarBlank size={12} weight="bold" />
+                        <span>Panen: {item.perkiraan_masa_panen || '2–4 Hari'}</span>
                       </div>
                     </div>
 
-                    <strong style={{ fontSize: '14px', color: 'var(--text-main)', display: 'block', lineHeight: 1.3, marginBottom: '0.65rem' }}>
+                    <strong style={{ fontSize: '14.5px', color: 'var(--text-main)', display: 'block', lineHeight: 1.3, marginBottom: '0.5rem' }}>
                       {item.nama_kebun}
                     </strong>
+
+                    {/* Quality Specs Pill Strip */}
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      marginBottom: '0.75rem',
+                      fontSize: '11px',
+                      color: 'var(--text-muted)',
+                      flexWrap: 'wrap'
+                    }}>
+                      <span style={{ background: '#f8fafc', padding: '3px 7px', borderRadius: '5px', border: '1px solid #e2e8f0' }}>
+                        Bobot: <strong>1.8–2.4 kg</strong>
+                      </span>
+                      <span style={{ background: '#fffbeb', color: '#b45309', padding: '3px 7px', borderRadius: '5px', border: '1px solid #fde68a', fontWeight: 600 }}>
+                        Fase Menuju Matang
+                      </span>
+                    </div>
 
                     <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.4rem', fontSize: '11.5px', color: 'var(--text-muted)', lineHeight: 1.45, marginBottom: '0.75rem' }}>
                       <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.4rem' }}>
@@ -330,7 +348,7 @@ export default function MengkalSection({ items = [] }) {
                       onClick={() => handleBookingWhatsApp(item)}
                       className="btn-action"
                       style={{
-                        flex: 1.25,
+                        flex: 1.35,
                         justifyContent: 'center',
                         padding: '9px 10px',
                         minHeight: '42px',
@@ -342,7 +360,7 @@ export default function MengkalSection({ items = [] }) {
                       title="Booking kuota via WhatsApp"
                     >
                       <WhatsappLogo size={16} weight="fill" />
-                      <span>Booking Melon</span>
+                      <span>Booking via WA</span>
                     </button>
                   </div>
                 </div>

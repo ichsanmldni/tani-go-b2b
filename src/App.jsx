@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import KpiSummary from './components/KpiSummary';
+import ValuePropositionSection from './components/ValuePropositionSection';
 import SiapJualSection from './components/SiapJualSection';
 import MengkalSection from './components/MengkalSection';
 import GreenhouseMapSection from './components/GreenhouseMapSection';
@@ -155,6 +156,9 @@ export default function App() {
             document.getElementById('mengkal')?.scrollIntoView({ behavior: 'smooth' });
           }}
         />
+
+        {/* B2B Value Proposition & Quality Guarantees */}
+        <ValuePropositionSection />
 
         {/* Filter & Search Bar */}
         <div className="panel filter-toolbar">
