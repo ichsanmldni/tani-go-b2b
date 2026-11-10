@@ -39,7 +39,7 @@ export default function Footer() {
             </strong>
           </div>
           <p style={{ margin: '0 0 0.6rem', lineHeight: 1.5, color: 'var(--text-muted)' }}>
-            Menghubungkan pembeli langsung dengan jaringan kebun melon hidroponik di Jawa Barat.
+            Menghubungkan pembeli langsung dengan jaringan kebun melon hidroponik mitra.
           </p>
         </div>
 

@@ -1,6 +1,6 @@
 # TaniGo — Marketplace Melon Hidroponik
 
-Platform web monitoring ketersediaan dan pemesanan melon mitra kebun langsung dari 3 kebun mitra di Jawa Barat.
+Platform web monitoring ketersediaan dan pemesanan melon mitra kebun langsung dari 3 kebun mitra.
 
 ---
 

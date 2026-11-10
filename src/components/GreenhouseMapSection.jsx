@@ -81,7 +81,7 @@ export default function GreenhouseMapSection({
               </span>
             </div>
             <p style={{ margin: '4px 0 0', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-              Tiga lokasi kebun mitra aktif di dataran tinggi Jawa Barat dengan sistem monitoring ketersediaan langsung.
+              Tiga lokasi kebun mitra aktif di dataran tinggi dengan sistem monitoring ketersediaan langsung.
             </p>
           </div>
         </div>
