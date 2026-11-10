@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { List, X, WhatsappLogo } from '@phosphor-icons/react';
+import { List, X } from '@phosphor-icons/react';
 import tanigoLogo from '../assets/tanigo-logo.png';
 
 export default function Navbar() {
@@ -63,21 +63,6 @@ export default function Navbar() {
           </a>
         </nav>
 
-        {/* Right CTA Button (Desktop) */}
-        <div className="navbar-right-actions hide-on-xs" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <a
-            href="https://wa.me/6281223456781"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary-craft"
-            style={{ padding: '8px 18px', fontSize: '12.5px' }}
-            title="Hubungi admin kebun mitra via WhatsApp"
-          >
-            <WhatsappLogo size={16} weight="fill" />
-            <span>Hubungi Kebun</span>
-          </a>
-        </div>
-
         {/* Mobile Hamburger Toggle Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -111,19 +96,6 @@ export default function Navbar() {
           <a href="#faq" onClick={closeMenu} className="navbar-mobile-link">
             <span>FAQ</span>
           </a>
-
-          <div style={{ paddingTop: '8px', marginTop: '6px', borderTop: '1px solid #f1f5f9' }}>
-            <a
-              href="https://wa.me/6281223456781"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary-craft"
-              style={{ width: '100%', justifyContent: 'center', padding: '10px 18px' }}
-            >
-              <WhatsappLogo size={17} weight="fill" />
-              <span>Hubungi Kebun via WA</span>
-            </a>
-          </div>
         </div>
       </div>
     </header>

@@ -1,20 +1,10 @@
 import React, { useState } from 'react';
-import {
-  MapPin,
-  ArrowSquareOut,
-  Clock,
-  CalendarBlank,
-  WhatsappLogo,
-  Plant,
-  Table,
-  SquaresFour,
-  Phone,
-  Copy
-} from '@phosphor-icons/react';
+import { MapPin, ArrowSquareOut, Clock, CalendarBlank, WhatsappLogo, Plant, Table, SquaresFour, Phone, Copy } from '@phosphor-icons/react';
 
 export default function MengkalSection({ items = [] }) {
   const safeItems = Array.isArray(items) ? items : [];
-  const [viewMode, setViewMode] = useState(() => (typeof window !== 'undefined' && window.innerWidth < 768 ? 'grid' : 'table'));
+  // Default to visual modern grid view for best UI/UX
+  const [viewMode, setViewMode] = useState('grid');
   const [copiedId, setCopiedId] = useState(null);
 
   const handleBookingWhatsApp = (item) => {
@@ -35,58 +25,217 @@ export default function MengkalSection({ items = [] }) {
   const totalMengkal = safeItems.reduce((acc, curr) => acc + (curr.jumlah_mengkal || 0), 0);
 
   return (
-    <section id="mengkal" style={{ marginBottom: '2rem', scrollMarginTop: '80px' }}>
-      <div className="panel" style={{ overflow: 'hidden' }}>
+    <section id="mengkal" style={{ marginBottom: '2.5rem', scrollMarginTop: '80px' }}>
+      <div className="panel" style={{ overflow: 'hidden', borderRadius: '20px' }}>
 
         {/* Panel Header */}
-        <div className="panel-header-responsive">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-            <span className="pulse-dot-amber"></span>
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-                <h2 style={{ fontSize: '1.08rem', fontWeight: 800, color: 'var(--text-main)', margin: 0, letterSpacing: '-0.01em' }}>
-                  Daftar Melon Mengkal (Booking)
-                </h2>
-                <span className="badge badge-warning">
-                  {totalMengkal} Buah Mengkal
-                </span>
-              </div>
-              <p style={{ margin: '3px 0 0', fontSize: '0.76rem', color: 'var(--text-muted)' }}>
-                Daftar melon dalam fase mengkal dengan perkiraan tanggal panen.
-              </p>
+        <div className="panel-header-responsive" style={{ padding: '1.25rem 1.5rem', background: '#ffffff', borderBottom: '1px solid #f1f5f9' }}>
+          <div>
+            <span style={{ fontSize: '11px', fontWeight: 800, letterSpacing: '0.08em', color: '#b45309', textTransform: 'uppercase', display: 'block', marginBottom: '3px' }}>
+              PANTAUAN JADWAL MASAK · TAHAP MENGKAL
+            </span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', flexWrap: 'wrap' }}>
+              <h2 style={{ fontSize: '1.25rem', fontWeight: 900, color: '#0f172a', margin: 0, letterSpacing: '-0.02em' }}>
+                Katalog Melon Mengkal (Booking)
+              </h2>
+              <span className="badge badge-warning" style={{ padding: '4px 10px', fontSize: '11.5px' }}>
+                <span className="pulse-dot-amber"></span>
+                {totalMengkal} Buah Dalam Pembesaran
+              </span>
             </div>
+            <p style={{ margin: '4px 0 0', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+              Melon yang sedang memasuki fase kematangan akhir di pohon. Amankan pemesanan sebelum jadwal panen tiba.
+            </p>
           </div>
 
-          {/* View Mode Switcher */}
+          {/* View Mode Switcher Pills */}
           <div style={{
             display: 'inline-flex',
             backgroundColor: '#f1f5f9',
-            padding: '3px',
-            borderRadius: '8px',
-            gap: '2px'
+            padding: '4px',
+            borderRadius: '9999px',
+            gap: '3px'
           }}>
-            <button
-              onClick={() => setViewMode('table')}
-              className={`view-switch-btn ${viewMode === 'table' ? 'active' : 'inactive'}`}
-              title="Tampilan Tabel Rinci"
-            >
-              <Table size={13} weight="bold" />
-              <span>Tabel</span>
-            </button>
             <button
               onClick={() => setViewMode('grid')}
               className={`view-switch-btn ${viewMode === 'grid' ? 'active' : 'inactive'}`}
+              style={{ borderRadius: '9999px', padding: '6px 14px' }}
               title="Tampilan Kartu Visual"
             >
-              <SquaresFour size={13} weight="bold" />
+              <SquaresFour size={14} weight="bold" />
               <span>Kartu</span>
+            </button>
+            <button
+              onClick={() => setViewMode('table')}
+              className={`view-switch-btn ${viewMode === 'table' ? 'active' : 'inactive'}`}
+              style={{ borderRadius: '9999px', padding: '6px 14px' }}
+              title="Tampilan Tabel Rinci"
+            >
+              <Table size={14} weight="bold" />
+              <span>Tabel</span>
             </button>
           </div>
         </div>
 
         {/* Content View */}
-        {viewMode === 'table' ? (
-          /* 1. Table View */
+        {viewMode === 'grid' ? (
+          /* 1. Modern Card Grid View */
+          <div className="card-grid">
+            {safeItems.length === 0 ? (
+              <div style={{ gridColumn: '1 / -1', padding: '3rem 1rem', textAlign: 'center', color: '#94a3b8' }}>
+                Tidak ada melon mengkal yang sesuai dengan kriteria penyaringan saat ini.
+              </div>
+            ) : (
+              safeItems.map((item) => (
+                <div key={item.id} className="commodity-card">
+                  <div>
+                    {/* Top Row */}
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem', gap: '0.75rem' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <div style={{
+                          width: '40px',
+                          height: '40px',
+                          borderRadius: '12px',
+                          backgroundColor: '#fef3c7',
+                          color: '#b45309',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          flexShrink: 0,
+                          boxShadow: '0 2px 6px rgba(217, 119, 6, 0.1)'
+                        }}>
+                          <Clock size={20} weight="bold" />
+                        </div>
+                        <div>
+                          <strong style={{ fontSize: '14.5px', color: '#0f172a', display: 'block', lineHeight: 1.3 }}>
+                            {item.nama_kebun}
+                          </strong>
+                          <span style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
+                            Kebun Hidroponik Mitra
+                          </span>
+                        </div>
+                      </div>
+
+                      <span className="badge badge-warning" style={{ padding: '4px 10px', fontSize: '11.5px' }}>
+                        <span className="pulse-dot-amber"></span>
+                        <strong className="font-mono">{item.jumlah_mengkal}</strong> Buah
+                      </span>
+                    </div>
+
+                    {/* Harvest Estimate Banner Pill */}
+                    <div style={{
+                      backgroundColor: '#fffbeb',
+                      border: '1.5px solid #fef3c7',
+                      borderRadius: '12px',
+                      padding: '9px 12px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      marginBottom: '0.85rem'
+                    }}>
+                      <CalendarBlank size={16} weight="bold" style={{ color: '#b45309' }} />
+                      <span style={{ fontSize: '11.5px', color: '#92400E', fontWeight: 600 }}>
+                        Estimasi Panen: <strong>{item.perkiraan_masa_panen || '2 - 4 Hari Lagi'}</strong>
+                      </span>
+                    </div>
+
+                    {/* Address Section */}
+                    <div style={{
+                      backgroundColor: '#f8fafc',
+                      border: '1px solid #f1f5f9',
+                      borderRadius: '12px',
+                      padding: '10px 12px',
+                      marginBottom: '0.85rem'
+                    }}>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.5rem', fontSize: '12px', color: '#334155', lineHeight: 1.45 }}>
+                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '6px' }}>
+                          <MapPin size={16} weight="fill" style={{ color: '#dc2626', flexShrink: 0, marginTop: '2px' }} />
+                          <span>{item.alamat}</span>
+                        </div>
+                        <button
+                          onClick={() => copyAddress(item)}
+                          style={{
+                            background: '#ffffff',
+                            color: copiedId === item.id ? '#b45309' : '#64748b',
+                            fontSize: '11px',
+                            cursor: 'pointer',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '3px',
+                            padding: '3px 8px',
+                            borderRadius: '9999px',
+                            border: '1px solid #e2e8f0',
+                            flexShrink: 0,
+                            fontWeight: 600,
+                            boxShadow: '0 1px 2px rgba(0,0,0,0.03)'
+                          }}
+                          title="Salin teks alamat lengkap"
+                        >
+                          <Copy size={11} />
+                          <span>{copiedId === item.id ? 'Tersalin' : 'Salin'}</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Pengelola Info */}
+                    {item.kontak_kebun && (
+                      <div style={{
+                        fontSize: '11.5px',
+                        color: 'var(--text-muted)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        marginBottom: '1.25rem',
+                        padding: '7px 10px',
+                        backgroundColor: '#ffffff',
+                        border: '1px solid #f1f5f9',
+                        borderRadius: '9999px'
+                      }}>
+                        <Phone size={14} style={{ color: '#b45309' }} />
+                        <span>Pengelola: <strong style={{ color: '#0f172a' }}>{item.kontak_kebun}</strong> ({item.no_hp})</span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Card Bottom Pill Actions */}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', paddingTop: '0.85rem', borderTop: '1px solid #f1f5f9' }}>
+                    <a
+                      href={item.link_gmaps}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-gmaps"
+                      style={{ flex: 1, minHeight: '44px' }}
+                      title="Buka rute Google Maps"
+                    >
+                      <MapPin size={15} weight="bold" />
+                      <span>Rute Maps</span>
+                      <ArrowSquareOut size={13} />
+                    </a>
+
+                    <button
+                      onClick={() => handleBookingWhatsApp(item)}
+                      className="btn-action"
+                      style={{
+                        flex: 1.35,
+                        minHeight: '44px',
+                        backgroundColor: '#fef3c7',
+                        borderColor: '#fde68a',
+                        color: '#92400e',
+                        justifyContent: 'center',
+                        boxShadow: '0 4px 14px -2px rgba(217, 119, 6, 0.25)'
+                      }}
+                      title="Pesan melon mengkal via WhatsApp"
+                    >
+                      <WhatsappLogo size={17} weight="fill" />
+                      <span>Booking via WA</span>
+                    </button>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+        ) : (
+          /* 2. Modern Clean Table View */
           <div className="table-container">
             <table className="table-craft">
               <thead>
@@ -96,14 +245,14 @@ export default function MengkalSection({ items = [] }) {
                   <th style={{ width: '12%', minWidth: '110px', textAlign: 'center' }}>Jumlah Mengkal</th>
                   <th style={{ width: '16%', minWidth: '145px', textAlign: 'center' }}>Estimasi Panen</th>
                   <th style={{ width: '12%', minWidth: '130px', textAlign: 'center' }}>Lokasi Maps</th>
-                  <th style={{ width: '12%', minWidth: '125px', textAlign: 'center' }}>Pemesanan</th>
+                  <th style={{ width: '12%', minWidth: '130px', textAlign: 'center' }}>Pemesanan</th>
                 </tr>
               </thead>
               <tbody>
                 {safeItems.length === 0 ? (
                   <tr>
                     <td colSpan="6" style={{ padding: '2.5rem 1rem', textAlign: 'center', color: '#94a3b8' }}>
-                      Tidak ada melon mengkal yang sesuai dengan kriteria penyaringan.
+                      Tidak ada melon mengkal yang sesuai dengan kriteria penyaringan saat ini.
                     </td>
                   </tr>
                 ) : (
@@ -112,27 +261,26 @@ export default function MengkalSection({ items = [] }) {
 
                       {/* 1. Greenhouse */}
                       <td>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                           <div style={{
-                            width: '32px',
-                            height: '32px',
-                            borderRadius: '8px',
-                            backgroundColor: 'var(--status-upcoming-bg)',
-                            color: 'var(--status-upcoming)',
+                            width: '36px',
+                            height: '36px',
+                            borderRadius: '10px',
+                            backgroundColor: '#fef3c7',
+                            color: '#b45309',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            flexShrink: 0,
-                            border: '1px solid var(--status-upcoming-border)'
+                            flexShrink: 0
                           }}>
-                            <Plant size={17} weight="bold" />
+                            <Plant size={18} weight="bold" />
                           </div>
                           <div>
-                            <strong style={{ fontSize: '13px', color: 'var(--text-main)', display: 'block', lineHeight: 1.3 }}>
+                            <strong style={{ fontSize: '13.5px', color: '#0f172a', display: 'block', lineHeight: 1.3 }}>
                               {item.nama_kebun}
                             </strong>
                             <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '2px' }}>
-                              Melon Hidroponik
+                              Hidroponik Mitra
                             </div>
                           </div>
                         </div>
@@ -142,7 +290,7 @@ export default function MengkalSection({ items = [] }) {
                       <td>
                         <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.45rem' }}>
                           <MapPin size={16} weight="fill" style={{ color: '#dc2626', flexShrink: 0, marginTop: '2px' }} />
-                          <div style={{ fontSize: '12px', color: 'var(--text-main)', lineHeight: 1.45, wordBreak: 'break-word' }}>
+                          <div style={{ fontSize: '12px', color: '#0f172a', lineHeight: 1.45, wordBreak: 'break-word' }}>
                             <span>{item.alamat}</span>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginTop: '4px', flexWrap: 'wrap' }}>
                               {item.kontak_kebun && (
@@ -154,14 +302,15 @@ export default function MengkalSection({ items = [] }) {
                                 onClick={() => copyAddress(item)}
                                 style={{
                                   border: 'none',
-                                  background: 'transparent',
-                                  color: copiedId === item.id ? 'var(--status-upcoming)' : 'var(--text-muted)',
+                                  background: '#f1f5f9',
+                                  color: copiedId === item.id ? '#b45309' : 'var(--text-muted)',
                                   fontSize: '10.5px',
                                   cursor: 'pointer',
                                   display: 'inline-flex',
                                   alignItems: 'center',
                                   gap: '2px',
-                                  padding: 0
+                                  padding: '2px 7px',
+                                  borderRadius: '9999px'
                                 }}
                                 title="Salin teks alamat lengkap"
                               >
@@ -175,11 +324,11 @@ export default function MengkalSection({ items = [] }) {
 
                       {/* 3. Jumlah Mengkal */}
                       <td style={{ textAlign: 'center' }}>
-                        <span className="badge badge-warning" style={{ fontSize: '12.5px', padding: '4px 10px' }}>
+                        <span className="badge badge-warning" style={{ fontSize: '12px', padding: '4px 10px' }}>
                           <Clock size={13} weight="bold" />
                           <strong className="font-mono">{item.jumlah_mengkal}</strong> buah
                         </span>
-                        <div style={{ fontSize: '10px', color: 'var(--status-upcoming)', marginTop: '3px', fontWeight: 600 }}>
+                        <div style={{ fontSize: '10px', color: '#b45309', marginTop: '3px', fontWeight: 600 }}>
                           Fase Mengkal
                         </div>
                       </td>
@@ -192,17 +341,14 @@ export default function MengkalSection({ items = [] }) {
                           gap: '5px',
                           padding: '4px 10px',
                           backgroundColor: '#fffbeb',
-                          borderRadius: '7px',
-                          border: '1px solid var(--status-upcoming-border)',
+                          borderRadius: '9999px',
+                          border: '1px solid #fef3c7',
                           fontSize: '11.5px',
                           fontWeight: 700,
-                          color: 'var(--status-upcoming)'
+                          color: '#92400e'
                         }}>
-                          <CalendarBlank size={14} weight="bold" style={{ color: 'var(--status-upcoming)' }} />
+                          <CalendarBlank size={13} style={{ color: '#b45309' }} />
                           <span>{item.perkiraan_masa_panen || '2 - 4 Hari Lagi'}</span>
-                        </div>
-                        <div style={{ fontSize: '10px', color: 'var(--text-muted)', marginTop: '3px' }}>
-                          Menuju Matang
                         </div>
                       </td>
 
@@ -213,33 +359,32 @@ export default function MengkalSection({ items = [] }) {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="btn-gmaps"
+                          style={{ padding: '7px 12px', fontSize: '11.5px' }}
                           title="Buka titik koordinat kebun di Google Maps"
                         >
-                          <MapPin size={14} weight="bold" />
-                          <span>Buka Maps</span>
-                          <ArrowSquareOut size={13} />
+                          <MapPin size={13} weight="bold" />
+                          <span>Rute Maps</span>
+                          <ArrowSquareOut size={12} />
                         </a>
                       </td>
 
-                      {/* 6. Aksi Pemesanan */}
+                      {/* 6. Aksi Booking Panen */}
                       <td style={{ textAlign: 'center' }}>
                         <button
                           onClick={() => handleBookingWhatsApp(item)}
-                          className="btn-booking-craft"
+                          className="btn-action"
                           style={{
                             fontSize: '11.5px',
-                            padding: '6px 12px',
-                            borderRadius: '8px',
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '5px',
-                            fontWeight: 700,
-                            whiteSpace: 'nowrap'
+                            padding: '7px 14px',
+                            backgroundColor: '#fffbeb',
+                            borderColor: '#fef3c7',
+                            color: '#92400e',
+                            fontWeight: 700
                           }}
                           title="Pesan melon mengkal via WhatsApp"
                         >
                           <WhatsappLogo size={14} weight="fill" />
-                          <span>Booking Melon</span>
+                          <span>Booking via WA</span>
                         </button>
                       </td>
 
@@ -248,109 +393,6 @@ export default function MengkalSection({ items = [] }) {
                 )}
               </tbody>
             </table>
-          </div>
-        ) : (
-          /* 2. Modern Card Grid View */
-          <div className="card-grid">
-            {safeItems.length === 0 ? (
-              <div style={{ gridColumn: '1 / -1', padding: '2.5rem 1rem', textAlign: 'center', color: '#94a3b8' }}>
-                Tidak ada melon mengkal yang sesuai dengan kriteria penyaringan.
-              </div>
-            ) : (
-              safeItems.map((item) => (
-                <div key={item.id} className="commodity-card upcoming-card">
-                  <div>
-                    {/* Card Top */}
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.65rem', flexWrap: 'wrap', gap: '0.4rem' }}>
-                      <span className="badge badge-warning" style={{ fontSize: '11px' }}>
-                        <span className="pulse-dot-amber"></span>
-                        Mengkal: <strong className="font-mono">{item.jumlah_mengkal}</strong> Buah
-                      </span>
-                      <div style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '4px',
-                        fontSize: '10.5px',
-                        fontWeight: 700,
-                        color: 'var(--status-upcoming)',
-                        backgroundColor: 'var(--status-upcoming-bg)',
-                        padding: '2px 8px',
-                        borderRadius: '9999px',
-                        border: '1px solid var(--status-upcoming-border)'
-                      }}>
-                        <CalendarBlank size={12} weight="bold" />
-                        <span>Panen: {item.perkiraan_masa_panen || '2–4 Hari'}</span>
-                      </div>
-                    </div>
-
-                    <strong style={{ fontSize: '14px', color: 'var(--text-main)', display: 'block', lineHeight: 1.3, marginBottom: '0.65rem' }}>
-                      {item.nama_kebun}
-                    </strong>
-
-                    <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.4rem', fontSize: '11.5px', color: 'var(--text-muted)', lineHeight: 1.45, marginBottom: '0.75rem' }}>
-                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.4rem' }}>
-                        <MapPin size={15} weight="fill" style={{ color: '#dc2626', flexShrink: 0, marginTop: '2px' }} />
-                        <span>{item.alamat}</span>
-                      </div>
-                      <button
-                        onClick={() => copyAddress(item)}
-                        style={{
-                          border: 'none',
-                          background: '#f1f5f9',
-                          color: copiedId === item.id ? 'var(--status-upcoming)' : 'var(--text-muted)',
-                          fontSize: '10.5px',
-                          cursor: 'pointer',
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '3px',
-                          padding: '3px 7px',
-                          borderRadius: '6px',
-                          flexShrink: 0,
-                          fontWeight: 600
-                        }}
-                        title="Salin teks alamat lengkap"
-                      >
-                        <Copy size={11} />
-                        <span>{copiedId === item.id ? 'Tersalin' : 'Salin'}</span>
-                      </button>
-                    </div>
-
-                    {item.kontak_kebun && (
-                      <div style={{ fontSize: '11px', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '4px', marginBottom: '1rem', padding: '6px 9px', backgroundColor: '#f8fafc', borderRadius: '7px' }}>
-                        <Phone size={13} style={{ color: 'var(--status-upcoming)' }} />
-                        <span>Pengelola: <strong>{item.kontak_kebun}</strong> ({item.no_hp})</span>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Card Bottom Actions */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', paddingTop: '0.75rem', borderTop: '1px solid #f1f5f9' }}>
-                    <a
-                      href={item.link_gmaps}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-gmaps"
-                      style={{ flex: 1, justifyContent: 'center', padding: '9px 10px', minHeight: '42px', borderRadius: '8px' }}
-                      title="Buka rute Google Maps"
-                    >
-                      <MapPin size={14} weight="bold" />
-                      <span>Buka Maps</span>
-                      <ArrowSquareOut size={13} />
-                    </a>
-
-                    <button
-                      onClick={() => handleBookingWhatsApp(item)}
-                      className="btn-whatsapp-booking"
-                      style={{ flex: 1.35, minHeight: '42px', borderRadius: '8px' }}
-                      title="Pesan melon mengkal via WhatsApp"
-                    >
-                      <WhatsappLogo size={16} weight="fill" />
-                      <span>Booking via WA</span>
-                    </button>
-                  </div>
-                </div>
-              ))
-            )}
           </div>
         )}
 
