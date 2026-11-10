@@ -97,7 +97,7 @@ export default function App() {
       }}>
         <img
           src={tanigoLogo}
-          alt="Tanigo Logo"
+          alt="TaniGo Logo"
           style={{
             width: '44px',
             height: '44px',

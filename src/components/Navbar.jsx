@@ -15,11 +15,11 @@ export default function Navbar() {
         <a href="#" className="navbar-brand">
           <img
             src={tanigoLogo}
-            alt="Tanigo Logo"
+            alt="TaniGo Logo"
             className="navbar-brand-logo"
           />
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <span className="navbar-brand-name">Tanigo</span>
+            <span className="navbar-brand-name">TaniGo</span>
             <span className="navbar-brand-badge">KEBUN MITRA</span>
           </div>
         </a>

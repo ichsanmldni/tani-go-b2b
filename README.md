@@ -1,4 +1,4 @@
-# Tanigo — Marketplace Melon Hidroponik
+# TaniGo — Marketplace Melon Hidroponik
 
 Platform web monitoring ketersediaan dan pemesanan melon mitra kebun langsung dari 3 kebun greenhouse di Jawa Barat.
 
@@ -194,7 +194,7 @@ b2b-marketplace-melon/
 ## Standar Nomenklatur & Kontribusi
 
 Bagi kontributor yang melakukan perubahan kode atau teks, wajib mematuhi standar berikut:
-1. **Nama Brand**: Selalu gunakan **Tanigo** (bukan variasi lain seperti *Melonagro*, *Melonagro Hilir*, atau *Hilir Segar*).
+1. **Nama Brand**: Selalu gunakan **TaniGo** (huruf T dan G kapital; bukan variasi lain seperti *Tanigo*, *Melonagro*, *Melonagro Hilir*, atau *Hilir Segar*).
 2. **Status Kematangan Baku**:
    - `Matang` (buah yang siap diambil di kebun).
    - `Mengkal` (buah dalam fase pematangan, estimasi 2–4 hari).
@@ -216,4 +216,4 @@ Bagi kontributor yang melakukan perubahan kode atau teks, wajib mematuhi standar
 ---
 
 ## Lisensi & Hak Cipta
-&copy; 2026 Tanigo. Seluruh hak cipta dilindungi.
+&copy; 2026 TaniGo. Seluruh hak cipta dilindungi.

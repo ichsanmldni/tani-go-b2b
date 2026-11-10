@@ -38,7 +38,7 @@ export default function HeroSection() {
             <div className="hero-fruit-plate-box">
               <img
                 src={heroMelonPlate}
-                alt="Piring Buah Melon Hidroponik Segar Tanigo"
+                alt="Piring Buah Melon Hidroponik Segar TaniGo"
                 className="hero-fruit-plate-image"
               />
             </div>

@@ -25,7 +25,7 @@ export default function Footer() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.6rem' }}>
             <img
               src={tanigoLogo}
-              alt="Tanigo Logo"
+              alt="TaniGo Logo"
               style={{
                 width: '30px',
                 height: '30px',
@@ -35,7 +35,7 @@ export default function Footer() {
               }}
             />
             <strong style={{ fontSize: '1.05rem', color: 'var(--text-main)', letterSpacing: '-0.02em' }}>
-              Tanigo
+              TaniGo
             </strong>
           </div>
           <p style={{ margin: '0 0 0.6rem', lineHeight: 1.5, color: 'var(--text-muted)' }}>
@@ -99,7 +99,7 @@ export default function Footer() {
         fontSize: '11px',
         color: 'var(--text-muted)'
       }}>
-        <span>&copy; {new Date().getFullYear()} Tanigo. Seluruh hak cipta dilindungi.</span>
+        <span>&copy; {new Date().getFullYear()} TaniGo. Seluruh hak cipta dilindungi.</span>
       </div>
     </footer>
   );
