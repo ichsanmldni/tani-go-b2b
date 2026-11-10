@@ -22,6 +22,8 @@ const getMengkalImage = (ghId) => {
   return melonMengkal1;
 };
 
+const cleanContact = (contact) => (contact || '').replace(/\s*\([^)]*\)/g, '').trim();
+
 export default function MengkalSection({ items = [] }) {
   const safeItems = Array.isArray(items) ? items : [];
   const [viewMode, setViewMode] = useState('grid');
@@ -30,7 +32,8 @@ export default function MengkalSection({ items = [] }) {
   const handleBookingWhatsApp = (item) => {
     const cleanPhone = (item.no_hp || '081223456781').replace(/[^0-9]/g, '');
     const intlPhone = cleanPhone.startsWith('0') ? '62' + cleanPhone.slice(1) : cleanPhone;
-    const msg = `Halo ${item.kontak_kebun || 'Pengelola kebun'}, saya ingin memesan melon mengkal di ${item.nama_kebun}. Perkiraan panen: ${item.perkiraan_masa_panen || '2-4 hari lagi'}. Mohon info ketersediaan dan prosedur pengambilannya. Terima kasih.`;
+    const contactName = cleanContact(item.kontak_kebun) || 'Pengelola kebun';
+    const msg = `Halo ${contactName}, saya ingin memesan melon mengkal di ${item.nama_kebun}. Perkiraan panen: ${item.perkiraan_masa_panen || '2-4 hari lagi'}. Mohon info ketersediaan dan prosedur pengambilannya. Terima kasih.`;
     window.open(`https://wa.me/${intlPhone}?text=${encodeURIComponent(msg)}`, '_blank');
   };
 
@@ -238,7 +241,7 @@ export default function MengkalSection({ items = [] }) {
                         borderRadius: '9999px'
                       }}>
                         <Phone size={14} style={{ color: '#b45309' }} />
-                        <span>Pengelola: <strong style={{ color: '#0f172a' }}>{item.kontak_kebun}</strong> ({item.no_hp})</span>
+                        <span>Pengelola: <strong style={{ color: '#0f172a' }}>{cleanContact(item.kontak_kebun)}</strong> ({item.no_hp})</span>
                       </div>
                     )}
                   </div>
@@ -340,7 +343,7 @@ export default function MengkalSection({ items = [] }) {
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginTop: '4px', flexWrap: 'wrap' }}>
                               {item.kontak_kebun && (
                                 <span style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
-                                  Pengelola: <strong>{item.kontak_kebun}</strong> ({item.no_hp})
+                                  Pengelola: <strong>{cleanContact(item.kontak_kebun)}</strong> ({item.no_hp})
                                 </span>
                               )}
                               <button

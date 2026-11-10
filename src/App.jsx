@@ -13,18 +13,26 @@ import { mockB2BData } from './data/mockFallback';
 import { MagnifyingGlass, Plant, X } from '@phosphor-icons/react';
 import tanigoLogo from './assets/tanigo-logo.png';
 
-// Standarisasi nama kebun sesuai Brand Sheet
+// Standarisasi nama kebun dan kontak pengelola sesuai Brand Sheet
 const normalizeGreenhouseItem = (item) => {
   if (!item) return item;
   let normalizedName = item.nama_kebun;
-  if (item.greenhouse_id === 'GH-1' || item.nama_kebun?.includes('Ciwidey')) {
+  let normalizedContact = item.kontak_kebun;
+
+  if (item.greenhouse_id === 'GH-1' || item.nama_kebun?.includes('Ciwidey') || item.nama_kebun?.includes('Sakura')) {
     normalizedName = 'Kebun Sakura (Ciwidey)';
-  } else if (item.greenhouse_id === 'GH-2' || item.nama_kebun?.includes('Lembang')) {
+    normalizedContact = 'Kang Asep Supriatna';
+  } else if (item.greenhouse_id === 'GH-2' || item.nama_kebun?.includes('Lembang') || item.nama_kebun?.includes('Maribaya')) {
     normalizedName = 'Kebun Maribaya (Lembang)';
-  } else if (item.greenhouse_id === 'GH-3' || item.nama_kebun?.includes('Pasirjambu')) {
+    normalizedContact = 'Pak Budi Hartono';
+  } else if (item.greenhouse_id === 'GH-3' || item.nama_kebun?.includes('Pasirjambu') || item.nama_kebun?.includes('Cisondari')) {
     normalizedName = 'Kebun Cisondari (Pasirjambu)';
+    normalizedContact = 'Ibu Rina Marlina';
+  } else if (normalizedContact) {
+    normalizedContact = normalizedContact.replace(/\s*\([^)]*\)/g, '').trim();
   }
-  return { ...item, nama_kebun: normalizedName };
+
+  return { ...item, nama_kebun: normalizedName, kontak_kebun: normalizedContact };
 };
 
 const normalizeCommodityData = (rawData) => {
