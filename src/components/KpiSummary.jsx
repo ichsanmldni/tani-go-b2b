@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, Clock, MapPin, ArrowUpRight, Plant } from '@phosphor-icons/react';
+import { CheckCircle, Clock, ArrowUpRight, Plant } from '@phosphor-icons/react';
 
 export default function KpiSummary({
   summary = {},
@@ -13,7 +13,6 @@ export default function KpiSummary({
 
   const matangCount = summary?.total_matang ?? safeReadyItems.reduce((acc, i) => acc + (i.jumlah_matang || 0), 0);
   const mengkalCount = summary?.total_mengkal ?? safeMengkalItems.reduce((acc, i) => acc + (i.jumlah_mengkal || 0), 0);
-  const kebunCount = summary?.total_kebun_aktif || 3;
   const grandTotal = matangCount + mengkalCount;
   const pctReadyTotal = grandTotal > 0 ? Math.round((matangCount / grandTotal) * 100) : 0;
 
@@ -29,10 +28,10 @@ export default function KpiSummary({
 
   return (
     <div style={{ marginBottom: '2.5rem' }}>
-      {/* 3 Metric Cards */}
+      {/* 2 Metric Cards: Matang & Mengkal */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
         gap: '1.25rem',
         marginBottom: '1.25rem'
       }}>
@@ -133,52 +132,6 @@ export default function KpiSummary({
 
           <p style={{ margin: 0, fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: 1.45 }}>
             Estimasi matang 2–4 hari lagi, siap dipesan langsung ke pengelola.
-          </p>
-        </div>
-
-        {/* Card 3: Greenhouse Aktif */}
-        <div
-          className="panel"
-          style={{
-            background: '#ffffff',
-            border: '1.5px solid #e2e8f0',
-            padding: '1.4rem 1.5rem',
-            borderRadius: '20px',
-            boxShadow: '0 4px 20px -2px rgba(15, 23, 42, 0.04)'
-          }}
-        >
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.85rem' }}>
-            <div style={{
-              width: '44px',
-              height: '44px',
-              borderRadius: '12px',
-              backgroundColor: '#f1f5f9',
-              color: '#334155',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}>
-              <MapPin size={22} weight="fill" style={{ color: '#dc2626' }} />
-            </div>
-            <span className="badge badge-neutral" style={{ fontSize: '0.72rem', padding: '4px 10px' }}>
-              3 Lokasi Kebun
-            </span>
-          </div>
-
-          <div>
-            <span style={{ fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.06em', color: '#475569', textTransform: 'uppercase', display: 'block', marginBottom: '2px' }}>
-              Greenhouse Aktif
-            </span>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.4rem', margin: '0.2rem 0 0.5rem' }}>
-              <span className="font-mono" style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0f172a', lineHeight: 1 }}>
-                {kebunCount}
-              </span>
-              <span style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-muted)' }}>lokasi kebun</span>
-            </div>
-          </div>
-
-          <p style={{ margin: 0, fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: 1.45 }}>
-            Ciwidey, Lembang, dan Pasirjambu aktif menyuplai buah segar.
           </p>
         </div>
       </div>

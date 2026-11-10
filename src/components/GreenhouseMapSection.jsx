@@ -69,11 +69,11 @@ export default function GreenhouseMapSection({
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '1.5rem' }}>
           <div>
             <span style={{ fontSize: '11px', fontWeight: 800, letterSpacing: '0.08em', color: '#166534', textTransform: 'uppercase', display: 'block', marginBottom: '3px' }}>
-              JARINGAN KEBUN MITRA AKTIF
+              JARINGAN MITRA KEBUN AKTIF
             </span>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
               <h2 style={{ fontSize: '1.25rem', fontWeight: 900, color: '#0f172a', margin: 0, letterSpacing: '-0.02em' }}>
-                Sebaran Lokasi Greenhouse
+                Sebaran Lokasi Mitra Kebun
               </h2>
               <span className="badge badge-success" style={{ padding: '4px 10px', fontSize: '11.5px' }}>
                 <span className="pulse-dot-green"></span>
@@ -81,7 +81,7 @@ export default function GreenhouseMapSection({
               </span>
             </div>
             <p style={{ margin: '4px 0 0', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-              Tiga lokasi kebun greenhouse mitra aktif di dataran tinggi Jawa Barat dengan sistem monitoring kematangan langsung.
+              Tiga lokasi kebun greenhouse mitra aktif di dataran tinggi Jawa Barat dengan sistem monitoring ketersediaan langsung.
             </p>
           </div>
         </div>

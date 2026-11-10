@@ -1,6 +1,6 @@
 # Tanigo — Marketplace Melon Hidroponik
 
-Platform web monitoring kematangan dan pemesanan melon hidroponik langsung dari 3 kebun greenhouse mitra di Jawa Barat.
+Platform web monitoring ketersediaan dan pemesanan melon mitra kebun langsung dari 3 kebun greenhouse di Jawa Barat.
 
 ---
 
@@ -28,7 +28,7 @@ Platform web monitoring kematangan dan pemesanan melon hidroponik langsung dari 
 Frontend ini dibangun dengan **React 18** dan **Vite** untuk memberikan performa yang cepat, ringan, dan responsif. Aplikasi ini menyajikan:
 - **Katalog Melon Matang**: Informasi ketersediaan buah matang siap diambil hari ini beserta lokasi kebun.
 - **Katalog Melon Mengkal**: Estimasi masa panen (2–4 hari) untuk kebutuhan pemesanan panen mendatang.
-- **Sebaran Lokasi Greenhouse**: Koordinat Google Maps, elevasi, suhu rata-rata, dan kontak penanggung jawab kebun.
+- **Sebaran Lokasi Mitra Kebun**: Koordinat Google Maps, elevasi, suhu rata-rata, dan kontak penanggung jawab kebun.
 - **Panduan Penjemputan Langsung**: Prosedur 4 langkah penjemputan buah langsung di greenhouse.
 - **Pemesanan Cepat via WhatsApp**: Tautan interaktif ke pengelola kebun dengan pesan yang telah tersusun otomatis.
 
