@@ -1,6 +1,5 @@
 import React from 'react';
 import heroMelonPlate from '../assets/hero-melon-plate.jpg';
-import { Plant, CheckCircle, ShieldCheck } from '@phosphor-icons/react';
 
 export default function HeroSection() {
   return (
@@ -29,63 +28,9 @@ export default function HeroSection() {
             </h2>
 
             {/* Description */}
-            <p className="hero-fruit-desc" style={{ marginBottom: '1.5rem' }}>
+            <p className="hero-fruit-desc" style={{ marginBottom: 0 }}>
               Monitoring langsung ketersediaan melon mitra kebun secara real-time. Amankan buah matang yang siap diambil hari ini atau pesan fase mengkal langsung dari pengelola kebun mitra kami.
             </p>
-
-            {/* Quality & Trust Badges */}
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.65rem',
-              flexWrap: 'wrap'
-            }}>
-              <span style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '5px',
-                padding: '6px 14px',
-                borderRadius: '9999px',
-                backgroundColor: '#f0fdf4',
-                border: '1px solid #bbf7d0',
-                fontSize: '12px',
-                fontWeight: 700,
-                color: '#166534'
-              }}>
-                <Plant size={15} weight="fill" />
-                Hidroponik Dataran Tinggi
-              </span>
-              <span style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '5px',
-                padding: '6px 14px',
-                borderRadius: '9999px',
-                backgroundColor: '#fffbeb',
-                border: '1px solid #fde68a',
-                fontSize: '12px',
-                fontWeight: 700,
-                color: '#92400e'
-              }}>
-                <CheckCircle size={15} weight="fill" />
-                Timbang Transparan di Kebun
-              </span>
-              <span style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '5px',
-                padding: '6px 14px',
-                borderRadius: '9999px',
-                backgroundColor: '#f8fafc',
-                border: '1px solid #e2e8f0',
-                fontSize: '12px',
-                fontWeight: 700,
-                color: '#334155'
-              }}>
-                <ShieldCheck size={15} weight="fill" />
-                Data Terverifikasi AI
-              </span>
-            </div>
           </div>
 
           {/* Right Column: Studio-Shot Fresh Melon on White Plate */}
