@@ -95,11 +95,16 @@ export default function Footer() {
         alignItems: 'center',
         justifyContent: 'space-between',
         flexWrap: 'wrap',
-        gap: '0.5rem',
+        gap: '0.65rem',
         fontSize: '11px',
         color: 'var(--text-muted)'
       }}>
         <span>&copy; {new Date().getFullYear()} TaniGo. Seluruh hak cipta dilindungi.</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+          <span>Support by <strong>UPNVJ</strong></span>
+          <span>&middot;</span>
+          <span>Team Support <strong>FIKoke by FIK Researchers</strong></span>
+        </div>
       </div>
     </footer>
   );
