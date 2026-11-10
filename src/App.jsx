@@ -123,10 +123,7 @@ export default function App() {
       overflowX: 'hidden'
     }}>
       {/* Navbar */}
-      <Navbar
-        readyCount={readyTotal}
-        mengkalCount={mengkalTotal}
-      />
+      <Navbar />
 
       {/* Hero Section */}
       <HeroSection
