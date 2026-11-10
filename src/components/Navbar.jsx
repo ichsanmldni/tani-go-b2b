@@ -20,7 +20,7 @@ export default function Navbar() {
           />
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <span className="navbar-brand-name">TaniGo</span>
-            <span className="navbar-brand-badge">KEBUN MITRA</span>
+            <span className="navbar-brand-badge">MITRA KEBUN</span>
           </div>
         </a>
 
