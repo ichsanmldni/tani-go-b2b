@@ -96,52 +96,6 @@ export default function HeroSection() {
                 alt="Piring Buah Melon Hidroponik Segar TaniGo"
                 className="hero-fruit-plate-image"
               />
-
-              {/* Floating Fresh Pill 1: Top Right */}
-              <div style={{
-                position: 'absolute',
-                top: '12px',
-                right: '-8px',
-                backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                backdropFilter: 'blur(8px)',
-                border: '1px solid #dcfce7',
-                borderRadius: '9999px',
-                padding: '7px 13px',
-                boxShadow: '0 10px 25px -4px rgba(22, 101, 52, 0.15)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                fontSize: '11.5px',
-                fontWeight: 700,
-                color: '#166534',
-                animation: 'floatSlow 4s ease-in-out infinite'
-              }}>
-                <Plant size={15} weight="fill" style={{ color: '#16a34a' }} />
-                <span>Panen Segar Harian</span>
-              </div>
-
-              {/* Floating Fresh Pill 2: Bottom Left */}
-              <div style={{
-                position: 'absolute',
-                bottom: '12px',
-                left: '-8px',
-                backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                backdropFilter: 'blur(8px)',
-                border: '1px solid #fef3c7',
-                borderRadius: '9999px',
-                padding: '7px 13px',
-                boxShadow: '0 10px 25px -4px rgba(217, 119, 6, 0.15)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                fontSize: '11.5px',
-                fontWeight: 700,
-                color: '#b45309',
-                animation: 'floatSlow 4s ease-in-out infinite 2s'
-              }}>
-                <span className="pulse-dot-amber"></span>
-                <span>Manis &amp; Renyah Alami</span>
-              </div>
             </div>
           </div>
 
