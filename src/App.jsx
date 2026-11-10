@@ -161,18 +161,9 @@ export default function App() {
         />
 
         {/* Filter & Search Bar */}
-        <div className="panel" style={{
-          padding: '0.9rem 1.25rem',
-          marginBottom: '1.75rem',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
-          gap: '0.85rem',
-          background: '#ffffff'
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', flexWrap: 'wrap' }}>
-            <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-main)' }}>
+        <div className="panel filter-toolbar">
+          <div className="filter-left-group">
+            <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-main)', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
               Pilih Greenhouse:
             </span>
             <select
@@ -188,7 +179,7 @@ export default function App() {
             </select>
 
             {/* Segmented Quick Tab Switcher */}
-            <div style={{
+            <div className="filter-segmented-tabs" style={{
               display: 'inline-flex',
               backgroundColor: '#f1f5f9',
               padding: '3px',
@@ -251,7 +242,7 @@ export default function App() {
           </div>
 
           {/* Search Box with Clear Button */}
-          <div style={{ position: 'relative', width: '290px', maxWidth: '100%' }}>
+          <div className="filter-search-box">
             <MagnifyingGlass
               size={15}
               style={{

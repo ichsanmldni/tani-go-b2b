@@ -87,7 +87,7 @@ export default function GreenhouseMapSection({
         {/* 3 Greenhouse Visual Cards */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(310px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: '1.15rem'
         }}>
           {greenhouses.map((gh) => {
@@ -241,21 +241,21 @@ export default function GreenhouseMapSection({
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-gmaps"
-                    style={{ flex: 1, justifyContent: 'center', padding: '7px 8px' }}
+                    style={{ flex: 1, justifyContent: 'center', padding: '9px 10px', minHeight: '42px' }}
                     title="Buka rute Google Maps langsung ke kebun ini"
                   >
                     <MapPin size={14} weight="bold" />
                     <span>Buka Maps</span>
-                    <ArrowSquareOut size={12} />
+                    <ArrowSquareOut size={13} />
                   </a>
 
                   <button
                     onClick={() => handleOrderWhatsApp(gh)}
                     className="btn-primary-craft"
-                    style={{ flex: 1.2, justifyContent: 'center', padding: '7px 8px' }}
+                    style={{ flex: 1.25, justifyContent: 'center', padding: '9px 10px', minHeight: '42px' }}
                     title="Hubungi pengelola kebun ini via WhatsApp"
                   >
-                    <WhatsappLogo size={15} weight="fill" />
+                    <WhatsappLogo size={16} weight="fill" />
                     <span>Hubungi Pengelola</span>
                   </button>
                 </div>

@@ -63,7 +63,8 @@ export default function FaqSection() {
                   onClick={() => toggleFaq(idx)}
                   style={{
                     width: '100%',
-                    padding: '0.9rem 1.15rem',
+                    minHeight: '48px',
+                    padding: '0.85rem 1.15rem',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',

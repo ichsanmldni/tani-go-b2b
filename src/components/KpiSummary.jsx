@@ -191,10 +191,19 @@ export default function KpiSummary({
         </div>
 
         {/* Greenhouse mini pills */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '6px', fontSize: '10.5px', color: 'var(--text-muted)', flexWrap: 'wrap', gap: '0.4rem' }}>
-          <span>Greenhouse Sakura (Ciwidey): <strong style={{ color: 'var(--status-ready)' }}>{gh1Ready} Matang</strong> &middot; <strong style={{ color: 'var(--status-upcoming)' }}>{gh1Mengkal} Mengkal</strong></span>
-          <span>Greenhouse Maribaya (Lembang): <strong style={{ color: 'var(--status-ready)' }}>{gh2Ready} Matang</strong> &middot; <strong style={{ color: 'var(--status-upcoming)' }}>{gh2Mengkal} Mengkal</strong></span>
-          <span>Greenhouse Cisondari (Pasirjambu): <strong style={{ color: 'var(--status-ready)' }}>{gh3Ready} Matang</strong> &middot; <strong style={{ color: 'var(--status-upcoming)' }}>{gh3Mengkal} Mengkal</strong></span>
+        <div className="kpi-breakdown-row">
+          <div className="kpi-breakdown-item">
+            <span>Greenhouse Sakura (Ciwidey):</span>
+            <span><strong style={{ color: 'var(--status-ready)' }}>{gh1Ready} Matang</strong> &middot; <strong style={{ color: 'var(--status-upcoming)' }}>{gh1Mengkal} Mengkal</strong></span>
+          </div>
+          <div className="kpi-breakdown-item">
+            <span>Greenhouse Maribaya (Lembang):</span>
+            <span><strong style={{ color: 'var(--status-ready)' }}>{gh2Ready} Matang</strong> &middot; <strong style={{ color: 'var(--status-upcoming)' }}>{gh2Mengkal} Mengkal</strong></span>
+          </div>
+          <div className="kpi-breakdown-item">
+            <span>Greenhouse Cisondari (Pasirjambu):</span>
+            <span><strong style={{ color: 'var(--status-ready)' }}>{gh3Ready} Matang</strong> &middot; <strong style={{ color: 'var(--status-upcoming)' }}>{gh3Mengkal} Mengkal</strong></span>
+          </div>
         </div>
       </div>
     </div>

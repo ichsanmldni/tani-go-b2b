@@ -3,7 +3,7 @@ import { MapPin, ArrowSquareOut, CheckCircle, WhatsappLogo, Plant, Table, Square
 
 export default function SiapJualSection({ items = [] }) {
   const safeItems = Array.isArray(items) ? items : [];
-  const [viewMode, setViewMode] = useState('table'); // 'table' | 'grid'
+  const [viewMode, setViewMode] = useState(() => (typeof window !== 'undefined' && window.innerWidth < 768 ? 'grid' : 'table'));
   const [copiedId, setCopiedId] = useState(null);
 
   const handleOrderWhatsApp = (item) => {
@@ -28,16 +28,7 @@ export default function SiapJualSection({ items = [] }) {
       <div className="panel" style={{ overflow: 'hidden' }}>
 
         {/* Panel Header */}
-        <div style={{
-          padding: '1.1rem 1.35rem',
-          borderBottom: '1px solid var(--border-subtle)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
-          gap: '0.75rem',
-          background: 'linear-gradient(180deg, #ffffff 0%, #fafafa 100%)'
-        }}>
+        <div className="panel-header-responsive">
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
             <span className="pulse-dot-green"></span>
             <div>
@@ -238,14 +229,37 @@ export default function SiapJualSection({ items = [] }) {
                       {item.nama_kebun}
                     </strong>
 
-                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.4rem', fontSize: '11.5px', color: 'var(--text-muted)', lineHeight: 1.45, marginBottom: '0.75rem' }}>
-                      <MapPin size={15} weight="fill" style={{ color: '#dc2626', flexShrink: 0, marginTop: '2px' }} />
-                      <span>{item.alamat}</span>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.4rem', fontSize: '11.5px', color: 'var(--text-muted)', lineHeight: 1.45, marginBottom: '0.75rem' }}>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.4rem' }}>
+                        <MapPin size={15} weight="fill" style={{ color: '#dc2626', flexShrink: 0, marginTop: '2px' }} />
+                        <span>{item.alamat}</span>
+                      </div>
+                      <button
+                        onClick={() => copyAddress(item)}
+                        style={{
+                          border: 'none',
+                          background: '#f1f5f9',
+                          color: copiedId === item.id ? 'var(--status-ready)' : 'var(--text-muted)',
+                          fontSize: '10.5px',
+                          cursor: 'pointer',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '3px',
+                          padding: '3px 7px',
+                          borderRadius: '6px',
+                          flexShrink: 0,
+                          fontWeight: 600
+                        }}
+                        title="Salin teks alamat lengkap"
+                      >
+                        <Copy size={11} />
+                        <span>{copiedId === item.id ? 'Tersalin' : 'Salin'}</span>
+                      </button>
                     </div>
 
                     {item.kontak_kebun && (
-                      <div style={{ fontSize: '11px', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '4px', marginBottom: '1rem', padding: '5px 8px', backgroundColor: '#f8fafc', borderRadius: '6px' }}>
-                        <Phone size={12} style={{ color: 'var(--primary)' }} />
+                      <div style={{ fontSize: '11px', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '4px', marginBottom: '1rem', padding: '6px 9px', backgroundColor: '#f8fafc', borderRadius: '7px' }}>
+                        <Phone size={13} style={{ color: 'var(--primary)' }} />
                         <span>Pengelola: <strong>{item.kontak_kebun}</strong> ({item.no_hp})</span>
                       </div>
                     )}
@@ -258,21 +272,21 @@ export default function SiapJualSection({ items = [] }) {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-gmaps"
-                      style={{ flex: 1, justifyContent: 'center', padding: '6px 8px' }}
+                      style={{ flex: 1, justifyContent: 'center', padding: '9px 10px', minHeight: '42px' }}
                       title="Buka rute Google Maps"
                     >
-                      <MapPin size={13} weight="bold" />
+                      <MapPin size={14} weight="bold" />
                       <span>Buka Maps</span>
-                      <ArrowSquareOut size={12} />
+                      <ArrowSquareOut size={13} />
                     </a>
 
                     <button
                       onClick={() => handleOrderWhatsApp(item)}
                       className="btn-primary-craft"
-                      style={{ flex: 1.2, justifyContent: 'center', padding: '6px 8px' }}
+                      style={{ flex: 1.25, justifyContent: 'center', padding: '9px 10px', minHeight: '42px' }}
                       title="Pesan via WhatsApp"
                     >
-                      <WhatsappLogo size={14} weight="fill" />
+                      <WhatsappLogo size={16} weight="fill" />
                       <span>Pesan Melon</span>
                     </button>
                   </div>

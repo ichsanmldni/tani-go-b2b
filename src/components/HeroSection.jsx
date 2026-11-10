@@ -43,22 +43,15 @@ export default function HeroSection({ readyCount = 0, mengkalCount = 0 }) {
         </p>
 
         {/* Action Buttons */}
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '0.75rem',
-          flexWrap: 'wrap',
-          marginBottom: '2rem'
-        }}>
+        <div className="hero-cta-wrap">
           <a
             href="#siap-jual"
             className="btn-primary-craft"
-            style={{ fontSize: '13px', padding: '9px 18px', borderRadius: '9px' }}
+            style={{ fontSize: '13px', padding: '10px 18px', borderRadius: '10px' }}
           >
-            <CheckCircle size={16} weight="bold" />
+            <CheckCircle size={17} weight="bold" />
             <span>Lihat Melon Matang ({readyCount})</span>
-            <ArrowRight size={13} weight="bold" />
+            <ArrowRight size={14} weight="bold" />
           </a>
 
           <a
@@ -66,15 +59,15 @@ export default function HeroSection({ readyCount = 0, mengkalCount = 0 }) {
             className="btn-action"
             style={{
               fontSize: '13px',
-              padding: '9px 18px',
+              padding: '10px 18px',
               borderColor: 'var(--status-upcoming-border)',
               backgroundColor: 'var(--status-upcoming-bg)',
               color: 'var(--status-upcoming)',
               fontWeight: 700,
-              borderRadius: '9px'
+              borderRadius: '10px'
             }}
           >
-            <Clock size={16} weight="bold" />
+            <Clock size={17} weight="bold" />
             <span>Booking Melon Mengkal ({mengkalCount})</span>
           </a>
         </div>
