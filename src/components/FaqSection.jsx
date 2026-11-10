@@ -26,8 +26,8 @@ export default function FaqSection() {
       a: 'Pembayaran dilakukan setelah proses penimbangan buah selesai di greenhouse melalui transfer bank langsung (QRIS / Virtual Account / Transfer Bank) atau tunai sebelum buah dimuat ke armada Anda.'
     },
     {
-      q: 'Apakah ada jaminan tingkat kemanisan (Brix) dan kualitas buah?',
-      a: 'Ya, seluruh melon hidroponik Tanigo dibudidayakan dengan standar kemanisan 13–16° Brix dan dipilah menggunakan model AI kematangan. Anda dipersilakan melakukan sampling uji refraktometer langsung di kebun bersama pengelola.'
+      q: 'Bagaimana memastikan kualitas dan kondisi buah?',
+      a: 'Buah yang dipanen telah melewati pemilahan kematangan dan pemeriksaan kondisi. Pembeli dapat memeriksa fisik buah secara langsung saat proses penimbangan di kebun bersama pengelola.'
     }
   ];
 

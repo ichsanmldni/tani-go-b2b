@@ -124,7 +124,7 @@ export default function KpiSummary({
           style={{
             background: '#ffffff',
             border: '1px solid var(--border-subtle)',
-            borderTop: '3.5px solid #2563eb',
+            borderTop: '3.5px solid var(--primary)',
             padding: '1.25rem 1.35rem',
             borderRadius: '14px',
             boxShadow: 'var(--shadow-xs)'

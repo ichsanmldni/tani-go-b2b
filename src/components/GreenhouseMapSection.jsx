@@ -29,7 +29,7 @@ export default function GreenhouseMapSection({
       location: 'Kayuambon, Lembang, Kab. Bandung Barat',
       elevation: '1.320 mdpl',
       temperature: '15 – 21°C',
-      color: '#2563eb',
+      color: 'var(--primary)',
       defaultReady: 6,
       defaultMengkal: 11,
       gmaps: 'https://maps.google.com/?q=-6.816432,107.625121',
@@ -42,7 +42,7 @@ export default function GreenhouseMapSection({
       location: 'Cisondari, Pasirjambu, Kab. Bandung',
       elevation: '1.150 mdpl',
       temperature: '18 – 25°C',
-      color: '#ca8a04',
+      color: 'var(--primary)',
       defaultReady: 19,
       defaultMengkal: 8,
       gmaps: 'https://maps.google.com/?q=-7.098712,107.476534',
@@ -101,10 +101,10 @@ export default function GreenhouseMapSection({
             <Mountains size={22} weight="fill" style={{ color: 'var(--primary)' }} />
             <div>
               <strong style={{ fontSize: '13px', color: 'var(--text-main)', display: 'block' }}>
-                Dataran Tinggi Bandung Raya (1.150 – 1.320 mdpl)
+                Lokasi Greenhouse Bandung Raya (1.150 – 1.320 mdpl)
               </strong>
               <small style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
-                Fluktuasi suhu siang-malam yang sejuk memicu akumulasi gula (Brix) alami yang lebih tinggi.
+                Tiga greenhouse aktif dengan akses penjemputan armada dan kontak pengelola langsung.
               </small>
             </div>
           </div>

@@ -124,30 +124,30 @@ export default function PanduanJemputSection() {
           })}
         </div>
 
-        {/* B2B Logistics Advisory Callout */}
+        {/* B2B Logistics Advisory Callout (No Emojis) */}
         <div style={{
           marginTop: '1.25rem',
           padding: '1rem 1.25rem',
-          backgroundColor: '#f0fdf4',
-          border: '1px solid #bbf7d0',
+          backgroundColor: '#f8fafc',
+          border: '1px solid #e2e8f0',
           borderRadius: '12px',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
           gap: '1rem',
           fontSize: '11.5px',
-          color: '#166534'
+          color: 'var(--text-muted)'
         }}>
           <div>
-            <strong style={{ display: 'block', marginBottom: '2px', color: '#14532d' }}>🚛 Akses Masuk Armada</strong>
+            <strong style={{ display: 'block', marginBottom: '2px', color: 'var(--text-main)' }}>Akses Masuk Armada</strong>
             <span>Lebar gerbang greenhouse min. 3.5 meter. Aman untuk motor boks roda tiga, pick-up, blind van, hingga truk engkel 4 roda.</span>
           </div>
           <div>
-            <strong style={{ display: 'block', marginBottom: '2px', color: '#14532d' }}>⚖️ Timbangan Digital di Lokasi</strong>
+            <strong style={{ display: 'block', marginBottom: '2px', color: 'var(--text-main)' }}>Timbangan di Lokasi</strong>
             <span>Setiap keranjang ditimbang bersama pengelola kebun sebelum dimuat ke armada Anda untuk akurasi data nota timbang.</span>
           </div>
           <div>
-            <strong style={{ display: 'block', marginBottom: '2px', color: '#14532d' }}>☀️ Jam Penjemputan Terbaik</strong>
-            <span>Pukul 07.00–10.30 WIB adalah waktu terbaik agar rantai dingin dan kesegaran buah tetap terjaga prima selama perjalanan.</span>
+            <strong style={{ display: 'block', marginBottom: '2px', color: 'var(--text-main)' }}>Waktu Penjemputan</strong>
+            <span>Pukul 07.00–10.30 WIB adalah jadwal penjemputan pagi yang disarankan agar kesegaran buah tetap terjaga prima.</span>
           </div>
         </div>
 
