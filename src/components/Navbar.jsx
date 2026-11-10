@@ -23,12 +23,12 @@ export default function Navbar() {
           </div>
         </a>
 
-        {/* Desktop Navigation Links (Pure navigation without content clutter) */}
+        {/* Desktop Navigation Links */}
         <nav className="navbar-desktop-nav">
-          <a href="#siap-jual" className="nav-link">Melon Matang</a>
-          <a href="#mengkal" className="nav-link">Melon Mengkal</a>
-          <a href="#lokasi-kebun" className="nav-link">Lokasi Kebun</a>
-          <a href="#panduan" className="nav-link">Cara Ambil</a>
+          <a href="#siap-jual" className="nav-link">Stok Panen</a>
+          <a href="#mengkal" className="nav-link">Jadwal Panen</a>
+          <a href="#lokasi-kebun" className="nav-link">Lokasi Greenhouse</a>
+          <a href="#panduan" className="nav-link">Panduan Ambil</a>
           <a href="#faq" className="nav-link">FAQ</a>
         </nav>
 
@@ -47,19 +47,19 @@ export default function Navbar() {
       <div className={`navbar-mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', paddingTop: '4px' }}>
           <a href="#siap-jual" onClick={closeMenu} className="navbar-mobile-link">
-            <span>Melon Matang</span>
+            <span>Stok Panen</span>
           </a>
 
           <a href="#mengkal" onClick={closeMenu} className="navbar-mobile-link">
-            <span>Melon Mengkal</span>
+            <span>Jadwal Panen</span>
           </a>
 
           <a href="#lokasi-kebun" onClick={closeMenu} className="navbar-mobile-link">
-            <span>Lokasi Kebun</span>
+            <span>Lokasi Greenhouse</span>
           </a>
 
           <a href="#panduan" onClick={closeMenu} className="navbar-mobile-link">
-            <span>Cara Ambil</span>
+            <span>Panduan Ambil</span>
           </a>
 
           <a href="#faq" onClick={closeMenu} className="navbar-mobile-link">
