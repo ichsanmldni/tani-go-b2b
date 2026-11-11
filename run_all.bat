@@ -1,7 +1,7 @@
 @echo off
 setlocal
 echo ============================================================
-echo   Tanigo - Menjalankan Flask Backend & React Frontend
+echo   BakulTani.id - Menjalankan Flask Backend & React Frontend
 echo ============================================================
 
 set "PYTHON_EXE=%LOCALAPPDATA%\Python\pythoncore-3.14-64\python.exe"

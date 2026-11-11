@@ -6,12 +6,13 @@ import SiapJualSection from './components/SiapJualSection';
 import MengkalSection from './components/MengkalSection';
 import GreenhouseMapSection from './components/GreenhouseMapSection';
 import PanduanJemputSection from './components/PanduanJemputSection';
+import AboutSection from './components/AboutSection';
 import FaqSection from './components/FaqSection';
 import Footer from './components/Footer';
 import { fetchB2BCommodities } from './services/api';
 import { mockB2BData } from './data/mockFallback';
 import { MagnifyingGlass, Plant, X } from '@phosphor-icons/react';
-import tanigoLogo from './assets/tanigo-logo.png';
+import bakulTaniLogo from './assets/bakultani-logo.png';
 
 // Standarisasi nama kebun dan kontak pengelola sesuai Brand Sheet
 const normalizeGreenhouseItem = (item) => {
@@ -104,11 +105,11 @@ export default function App() {
         fontSize: '0.85rem'
       }}>
         <img
-          src={tanigoLogo}
-          alt="TaniGo Logo"
+          src={bakulTaniLogo}
+          alt="BakulTani.id Logo"
           style={{
-            width: '44px',
-            height: '44px',
+            width: '48px',
+            height: '48px',
             objectFit: 'contain',
             borderRadius: '9px',
             boxShadow: '0 2px 8px rgba(22, 101, 52, 0.15)'
@@ -314,7 +315,10 @@ export default function App() {
         {/* 4. Section Panduan Penjemputan Langsung */}
         <PanduanJemputSection />
 
-        {/* 5. Section Pertanyaan Umum */}
+        {/* 5. Section Tentang Kami */}
+        <AboutSection />
+
+        {/* 6. Section Pertanyaan Umum */}
         <FaqSection />
 
       </main>

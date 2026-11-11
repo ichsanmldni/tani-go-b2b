@@ -1,6 +1,6 @@
 import React from 'react';
 import { MapPin, Phone, EnvelopeSimple } from '@phosphor-icons/react';
-import tanigoLogo from '../assets/tanigo-logo.png';
+import bakulTaniLogo from '../assets/bakultani-logo.png';
 
 export default function Footer() {
   return (
@@ -22,20 +22,20 @@ export default function Footer() {
       }}>
         {/* Col 1: Brand Info */}
         <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.6rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.6rem' }}>
             <img
-              src={tanigoLogo}
-              alt="TaniGo Logo"
+              src={bakulTaniLogo}
+              alt="BakulTani.id Logo"
               style={{
-                width: '30px',
-                height: '30px',
+                width: '32px',
+                height: '32px',
                 objectFit: 'contain',
                 borderRadius: '6px',
                 flexShrink: 0
               }}
             />
             <strong style={{ fontSize: '1.05rem', color: 'var(--text-main)', letterSpacing: '-0.02em' }}>
-              TaniGo
+              BakulTani.id
             </strong>
           </div>
           <p style={{ margin: '0 0 0.6rem', lineHeight: 1.5, color: 'var(--text-muted)' }}>
@@ -76,7 +76,7 @@ export default function Footer() {
             </li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
               <EnvelopeSimple size={15} weight="fill" style={{ color: 'var(--primary)' }} />
-              <span>Email: halo@tanigo.id</span>
+              <span>Email: halo@bakultani.id</span>
             </li>
             <li style={{ marginTop: '0.4rem', fontSize: '11px', color: 'var(--text-muted)' }}>
               Jam penjemputan: Setiap hari, 07.00–17.00 WIB
@@ -99,7 +99,7 @@ export default function Footer() {
         fontSize: '11px',
         color: 'var(--text-muted)'
       }}>
-        <span>&copy; {new Date().getFullYear()} TaniGo. Seluruh hak cipta dilindungi.</span>
+        <span>&copy; {new Date().getFullYear()} BakulTani.id. Seluruh hak cipta dilindungi.</span>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
           <span>Support by <strong>UPNVJ</strong></span>
           <span>&middot;</span>

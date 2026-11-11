@@ -6,7 +6,7 @@ export default function HeroSection() {
     <section className="hero-fruit-wrap">
       {/* Background Typographic Watermark */}
       <div className="hero-watermark-text" aria-hidden="true">
-        TANIGO
+        BAKULTANI
       </div>
 
       <div className="hero-fruit-container">
@@ -38,7 +38,7 @@ export default function HeroSection() {
             <div className="hero-fruit-plate-box">
               <img
                 src={heroMelonPlate}
-                alt="Piring Buah Melon Hidroponik Segar TaniGo"
+                alt="Piring Buah Melon Hidroponik Segar BakulTani.id"
                 className="hero-fruit-plate-image"
               />
             </div>

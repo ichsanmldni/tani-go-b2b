@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { List, X } from '@phosphor-icons/react';
-import tanigoLogo from '../assets/tanigo-logo.png';
+import bakulTaniLogo from '../assets/bakultani-logo.png';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -14,12 +14,13 @@ export default function Navbar() {
         {/* Brand */}
         <a href="#" className="navbar-brand">
           <img
-            src={tanigoLogo}
-            alt="TaniGo Logo"
+            src={bakulTaniLogo}
+            alt="BakulTani.id Logo"
             className="navbar-brand-logo"
+            style={{ width: '38px', height: '38px', objectFit: 'contain' }}
           />
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <span className="navbar-brand-name">TaniGo</span>
+            <span className="navbar-brand-name">BakulTani.id</span>
             <span className="navbar-brand-badge">MITRA KEBUN</span>
           </div>
         </a>
@@ -53,6 +54,13 @@ export default function Navbar() {
             className={`nav-link ${activeTab === 'panduan' ? 'active' : ''}`}
           >
             Panduan Ambil
+          </a>
+          <a
+            href="#tentang-kami"
+            onClick={() => setActiveTab('about')}
+            className={`nav-link ${activeTab === 'about' ? 'active' : ''}`}
+          >
+            Tentang Kami
           </a>
           <a
             href="#faq"
@@ -91,6 +99,10 @@ export default function Navbar() {
 
           <a href="#panduan" onClick={closeMenu} className="navbar-mobile-link">
             <span>Panduan Ambil</span>
+          </a>
+
+          <a href="#tentang-kami" onClick={closeMenu} className="navbar-mobile-link">
+            <span>Tentang Kami</span>
           </a>
 
           <a href="#faq" onClick={closeMenu} className="navbar-mobile-link">
