@@ -20,6 +20,7 @@ export default function GreenhouseMapSection({
       badgeNum: '01',
       defaultReady: 13,
       defaultMengkal: 13,
+      defaultMentah: 6,
       gmaps: 'https://maps.google.com/?q=-7.135248,107.411623',
       contact: 'Kang Asep Supriatna',
       phone: '0812-2345-6781'
@@ -34,6 +35,7 @@ export default function GreenhouseMapSection({
       badgeNum: '02',
       defaultReady: 6,
       defaultMengkal: 11,
+      defaultMentah: 15,
       gmaps: 'https://maps.google.com/?q=-6.816432,107.625121',
       contact: 'Pak Budi Hartono',
       phone: '0813-8765-4321'
@@ -48,6 +50,7 @@ export default function GreenhouseMapSection({
       badgeNum: '03',
       defaultReady: 19,
       defaultMengkal: 8,
+      defaultMentah: 5,
       gmaps: 'https://maps.google.com/?q=-7.098712,107.476534',
       contact: 'Ibu Rina Marlina',
       phone: '0821-9876-1234'
@@ -142,10 +145,15 @@ export default function GreenhouseMapSection({
           gap: '1.25rem'
         }}>
           {greenhouses.map((gh) => {
-            const ready = safeReadyItems.find(i => i.greenhouse_id === gh.id)?.jumlah_matang ?? gh.defaultReady;
-            const mengkal = safeMengkalItems.find(i => i.greenhouse_id === gh.id)?.jumlah_mengkal ?? gh.defaultMengkal;
-            const total = ready + mengkal;
+            const readyItem = safeReadyItems.find(i => i.greenhouse_id === gh.id);
+            const mengkalItem = safeMengkalItems.find(i => i.greenhouse_id === gh.id);
+            const ready = readyItem?.jumlah_matang ?? gh.defaultReady;
+            const mengkal = mengkalItem?.jumlah_mengkal ?? gh.defaultMengkal;
+            const mentah = readyItem?.jumlah_mentah ?? mengkalItem?.jumlah_mentah ?? gh.defaultMentah ?? 0;
+            const total = ready + mengkal + mentah;
             const pctReady = total > 0 ? Math.round((ready / total) * 100) : 0;
+            const pctMengkal = total > 0 ? Math.round((mengkal / total) * 100) : 0;
+            const pctMentah = Math.max(0, 100 - pctReady - pctMengkal);
 
             return (
               <div
@@ -233,12 +241,15 @@ export default function GreenhouseMapSection({
                     border: '1px solid #f1f5f9',
                     marginBottom: '0.85rem'
                   }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '11.5px', marginBottom: '6px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '11px', marginBottom: '6px', flexWrap: 'wrap', gap: '4px' }}>
                       <span style={{ color: '#16a34a', fontWeight: 700 }}>
-                        Matang: {ready} Buah
+                        Matang: {ready}
                       </span>
                       <span style={{ color: '#d97706', fontWeight: 700 }}>
-                        Mengkal: {mengkal} Buah
+                        Mengkal: {mengkal}
+                      </span>
+                      <span style={{ color: '#64748b', fontWeight: 700 }}>
+                        Mentah: {mentah}
                       </span>
                     </div>
 
@@ -247,7 +258,7 @@ export default function GreenhouseMapSection({
                       width: '100%',
                       height: '8px',
                       borderRadius: '9999px',
-                      backgroundColor: '#fef3c7',
+                      backgroundColor: '#e2e8f0',
                       overflow: 'hidden',
                       display: 'flex'
                     }}>
@@ -257,12 +268,28 @@ export default function GreenhouseMapSection({
                           backgroundColor: '#16a34a',
                           transition: 'width 0.4s ease'
                         }}
-                        title={`Matang: ${pctReady}%`}
+                        title={`Matang: ${ready} (${pctReady}%)`}
+                      ></div>
+                      <div
+                        style={{
+                          width: `${pctMengkal}%`,
+                          backgroundColor: '#d97706',
+                          transition: 'width 0.4s ease'
+                        }}
+                        title={`Mengkal: ${mengkal} (${pctMengkal}%)`}
+                      ></div>
+                      <div
+                        style={{
+                          width: `${pctMentah}%`,
+                          backgroundColor: '#94a3b8',
+                          transition: 'width 0.4s ease'
+                        }}
+                        title={`Mentah: ${mentah} (${pctMentah}%)`}
                       ></div>
                     </div>
 
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '10.5px', color: 'var(--text-muted)', marginTop: '5px' }}>
-                      <span>Kesiapan: <strong>{pctReady}%</strong></span>
+                      <span>Kesiapan: <strong>{pctReady}%</strong> Matang</span>
                       <span>Total: <strong>{total}</strong> Buah</span>
                     </div>
                   </div>

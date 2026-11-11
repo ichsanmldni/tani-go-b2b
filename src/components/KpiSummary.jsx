@@ -13,18 +13,29 @@ export default function KpiSummary({
 
   const matangCount = summary?.total_matang ?? safeReadyItems.reduce((acc, i) => acc + (i.jumlah_matang || 0), 0);
   const mengkalCount = summary?.total_mengkal ?? safeMengkalItems.reduce((acc, i) => acc + (i.jumlah_mengkal || 0), 0);
-  const grandTotal = matangCount + mengkalCount;
-  const pctReadyTotal = grandTotal > 0 ? Math.round((matangCount / grandTotal) * 100) : 0;
+  const mentahCount = summary?.total_mentah ?? (
+    safeReadyItems.reduce((acc, i) => acc + (i.jumlah_mentah || 0), 0) ||
+    safeMengkalItems.reduce((acc, i) => acc + (i.jumlah_mentah || 0), 0) ||
+    26
+  );
+  const grandTotal = summary?.total_buah ?? (matangCount + mengkalCount + mentahCount);
 
-  // Dynamic counts per greenhouse
+  const pctMatang = grandTotal > 0 ? Math.round((matangCount / grandTotal) * 100) : 0;
+  const pctMengkal = grandTotal > 0 ? Math.round((mengkalCount / grandTotal) * 100) : 0;
+  const pctMentah = Math.max(0, 100 - pctMatang - pctMengkal);
+
+  // Dynamic counts per kebun (Matang, Mengkal, Mentah)
   const gh1Ready = safeReadyItems.find(i => i.greenhouse_id === 'GH-1')?.jumlah_matang ?? 13;
   const gh1Mengkal = safeMengkalItems.find(i => i.greenhouse_id === 'GH-1')?.jumlah_mengkal ?? 13;
+  const gh1Mentah = safeReadyItems.find(i => i.greenhouse_id === 'GH-1')?.jumlah_mentah ?? safeMengkalItems.find(i => i.greenhouse_id === 'GH-1')?.jumlah_mentah ?? 6;
 
   const gh2Ready = safeReadyItems.find(i => i.greenhouse_id === 'GH-2')?.jumlah_matang ?? 6;
   const gh2Mengkal = safeMengkalItems.find(i => i.greenhouse_id === 'GH-2')?.jumlah_mengkal ?? 11;
+  const gh2Mentah = safeReadyItems.find(i => i.greenhouse_id === 'GH-2')?.jumlah_mentah ?? safeMengkalItems.find(i => i.greenhouse_id === 'GH-2')?.jumlah_mentah ?? 15;
 
   const gh3Ready = safeReadyItems.find(i => i.greenhouse_id === 'GH-3')?.jumlah_matang ?? 19;
   const gh3Mengkal = safeMengkalItems.find(i => i.greenhouse_id === 'GH-3')?.jumlah_mengkal ?? 8;
+  const gh3Mentah = safeReadyItems.find(i => i.greenhouse_id === 'GH-3')?.jumlah_mentah ?? safeMengkalItems.find(i => i.greenhouse_id === 'GH-3')?.jumlah_mentah ?? 5;
 
   return (
     <div style={{ marginBottom: '2.5rem' }}>
@@ -147,7 +158,7 @@ export default function KpiSummary({
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <Plant size={17} weight="bold" style={{ color: 'var(--primary)' }} />
             <strong style={{ fontSize: '13px', color: '#0f172a' }}>
-              Keseimbangan Panen: {matangCount} Matang ({pctReadyTotal}%) &middot; {mengkalCount} Mengkal ({100 - pctReadyTotal}%)
+              Keseimbangan Panen: {matangCount} Matang ({pctMatang}%) &middot; {mengkalCount} Mengkal ({pctMengkal}%) &middot; {mentahCount} Mentah ({pctMentah}%)
             </strong>
           </div>
           <span style={{ fontSize: '11.5px', color: 'var(--text-muted)' }}>
@@ -155,39 +166,67 @@ export default function KpiSummary({
           </span>
         </div>
 
-        {/* Visual Dual Color Progress Bar */}
+        {/* Visual Tri-Color Progress Bar: Matang (Green) + Mengkal (Amber) + Mentah (Slate) */}
         <div style={{
           width: '100%',
           height: '11px',
           borderRadius: '9999px',
-          backgroundColor: '#fef3c7',
+          backgroundColor: '#e2e8f0',
           overflow: 'hidden',
           display: 'flex',
           boxShadow: 'inset 0 1px 2px rgba(0, 0, 0, 0.05)'
         }}>
           <div
             style={{
-              width: `${pctReadyTotal}%`,
+              width: `${pctMatang}%`,
               backgroundColor: '#16a34a',
               transition: 'width 0.5s cubic-bezier(0.16, 1, 0.3, 1)'
             }}
-            title={`Matang: ${pctReadyTotal}%`}
-          ></div>
+            title={`Matang: ${pctMatang}%`}
+          />
+          <div
+            style={{
+              width: `${pctMengkal}%`,
+              backgroundColor: '#d97706',
+              transition: 'width 0.5s cubic-bezier(0.16, 1, 0.3, 1)'
+            }}
+            title={`Mengkal: ${pctMengkal}%`}
+          />
+          <div
+            style={{
+              width: `${pctMentah}%`,
+              backgroundColor: '#94a3b8',
+              transition: 'width 0.5s cubic-bezier(0.16, 1, 0.3, 1)'
+            }}
+            title={`Mentah: ${pctMentah}%`}
+          />
         </div>
 
         {/* Kebun mitra mini breakdown pills */}
         <div className="kpi-breakdown-row" style={{ marginTop: '10px' }}>
           <div className="kpi-breakdown-item" style={{ borderRadius: '9999px', padding: '5px 12px' }}>
             <span>Sakura (Ciwidey):</span>
-            <span><strong style={{ color: '#16a34a' }}>{gh1Ready} Matang</strong> &middot; <strong style={{ color: '#d97706' }}>{gh1Mengkal} Mengkal</strong></span>
+            <span>
+              <strong style={{ color: '#16a34a' }}>{gh1Ready} Matang</strong> &middot;{' '}
+              <strong style={{ color: '#d97706' }}>{gh1Mengkal} Mengkal</strong> &middot;{' '}
+              <strong style={{ color: '#64748b' }}>{gh1Mentah} Mentah</strong>
+            </span>
           </div>
           <div className="kpi-breakdown-item" style={{ borderRadius: '9999px', padding: '5px 12px' }}>
             <span>Maribaya (Lembang):</span>
-            <span><strong style={{ color: '#16a34a' }}>{gh2Ready} Matang</strong> &middot; <strong style={{ color: '#d97706' }}>{gh2Mengkal} Mengkal</strong></span>
+            <span>
+              <strong style={{ color: '#16a34a' }}>{gh2Ready} Matang</strong> &middot;{' '}
+              <strong style={{ color: '#d97706' }}>{gh2Mengkal} Mengkal</strong> &middot;{' '}
+              <strong style={{ color: '#64748b' }}>{gh2Mentah} Mentah</strong>
+            </span>
           </div>
           <div className="kpi-breakdown-item" style={{ borderRadius: '9999px', padding: '5px 12px' }}>
             <span>Cisondari (Pasirjambu):</span>
-            <span><strong style={{ color: '#16a34a' }}>{gh3Ready} Matang</strong> &middot; <strong style={{ color: '#d97706' }}>{gh3Mengkal} Mengkal</strong></span>
+            <span>
+              <strong style={{ color: '#16a34a' }}>{gh3Ready} Matang</strong> &middot;{' '}
+              <strong style={{ color: '#d97706' }}>{gh3Mengkal} Mengkal</strong> &middot;{' '}
+              <strong style={{ color: '#64748b' }}>{gh3Mentah} Mentah</strong>
+            </span>
           </div>
         </div>
       </div>

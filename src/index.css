@@ -134,11 +134,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-brand-logo {
-  width: 36px;
-  height: 36px;
+  height: 44px;
+  width: auto;
+  max-height: 48px;
   object-fit: contain;
   border-radius: 8px;
   flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.navbar-brand-logo:hover {
+  transform: scale(1.03);
 }
 
 .navbar-brand-name {

@@ -17,12 +17,9 @@ export default function Navbar() {
             src={bakulTaniLogo}
             alt="BakulTani.id Logo"
             className="navbar-brand-logo"
-            style={{ width: '38px', height: '38px', objectFit: 'contain' }}
+            style={{ height: '44px', width: 'auto', maxHeight: '48px', objectFit: 'contain' }}
           />
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <span className="navbar-brand-name">BakulTani.id</span>
-            <span className="navbar-brand-badge">MITRA KEBUN</span>
-          </div>
+          <span className="navbar-brand-badge" style={{ marginLeft: '4px' }}>MITRA KEBUN</span>
         </a>
 
         {/* Desktop Navigation Links */}
