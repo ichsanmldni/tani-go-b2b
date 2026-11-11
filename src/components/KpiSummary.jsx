@@ -16,7 +16,7 @@ export default function KpiSummary({
   const mentahCount = summary?.total_mentah ?? (
     safeReadyItems.reduce((acc, i) => acc + (i.jumlah_mentah || 0), 0) ||
     safeMengkalItems.reduce((acc, i) => acc + (i.jumlah_mentah || 0), 0) ||
-    26
+    35
   );
   const grandTotal = summary?.total_buah ?? (matangCount + mengkalCount + mentahCount);
 
@@ -25,17 +25,17 @@ export default function KpiSummary({
   const pctMentah = Math.max(0, 100 - pctMatang - pctMengkal);
 
   // Dynamic counts per kebun (Matang, Mengkal, Mentah)
-  const gh1Ready = safeReadyItems.find(i => i.greenhouse_id === 'GH-1')?.jumlah_matang ?? 13;
-  const gh1Mengkal = safeMengkalItems.find(i => i.greenhouse_id === 'GH-1')?.jumlah_mengkal ?? 13;
-  const gh1Mentah = safeReadyItems.find(i => i.greenhouse_id === 'GH-1')?.jumlah_mentah ?? safeMengkalItems.find(i => i.greenhouse_id === 'GH-1')?.jumlah_mentah ?? 6;
+  const gh1Ready = safeReadyItems.find(i => i.greenhouse_id === 'GH-1')?.jumlah_matang ?? 9;
+  const gh1Mengkal = safeMengkalItems.find(i => i.greenhouse_id === 'GH-1')?.jumlah_mengkal ?? 10;
+  const gh1Mentah = safeReadyItems.find(i => i.greenhouse_id === 'GH-1')?.jumlah_mentah ?? safeMengkalItems.find(i => i.greenhouse_id === 'GH-1')?.jumlah_mentah ?? 13;
 
-  const gh2Ready = safeReadyItems.find(i => i.greenhouse_id === 'GH-2')?.jumlah_matang ?? 6;
+  const gh2Ready = safeReadyItems.find(i => i.greenhouse_id === 'GH-2')?.jumlah_matang ?? 14;
   const gh2Mengkal = safeMengkalItems.find(i => i.greenhouse_id === 'GH-2')?.jumlah_mengkal ?? 11;
-  const gh2Mentah = safeReadyItems.find(i => i.greenhouse_id === 'GH-2')?.jumlah_mentah ?? safeMengkalItems.find(i => i.greenhouse_id === 'GH-2')?.jumlah_mentah ?? 15;
+  const gh2Mentah = safeReadyItems.find(i => i.greenhouse_id === 'GH-2')?.jumlah_mentah ?? safeMengkalItems.find(i => i.greenhouse_id === 'GH-2')?.jumlah_mentah ?? 7;
 
-  const gh3Ready = safeReadyItems.find(i => i.greenhouse_id === 'GH-3')?.jumlah_matang ?? 19;
-  const gh3Mengkal = safeMengkalItems.find(i => i.greenhouse_id === 'GH-3')?.jumlah_mengkal ?? 8;
-  const gh3Mentah = safeReadyItems.find(i => i.greenhouse_id === 'GH-3')?.jumlah_mentah ?? safeMengkalItems.find(i => i.greenhouse_id === 'GH-3')?.jumlah_mentah ?? 5;
+  const gh3Ready = safeReadyItems.find(i => i.greenhouse_id === 'GH-3')?.jumlah_matang ?? 6;
+  const gh3Mengkal = safeMengkalItems.find(i => i.greenhouse_id === 'GH-3')?.jumlah_mengkal ?? 11;
+  const gh3Mentah = safeReadyItems.find(i => i.greenhouse_id === 'GH-3')?.jumlah_mentah ?? safeMengkalItems.find(i => i.greenhouse_id === 'GH-3')?.jumlah_mentah ?? 15;
 
   return (
     <div style={{ marginBottom: '2.5rem' }}>
