@@ -28,6 +28,10 @@ export default function FaqSection() {
     {
       q: 'Bagaimana memastikan kualitas dan kondisi fisik buah?',
       a: 'Buah yang dipanen telah melewati pemilahan kematangan di pohon dan pemeriksaan kondisi fisik. Pembeli dapat memeriksa fisik buah secara langsung saat proses penimbangan di kebun bersama pengelola.'
+    },
+    {
+      q: 'Bagaimana menjadi penyedia pada BakulTani.id?',
+      a: 'Bagi petani yang ingin bermitra sebagai penyedia di BakulTani.id dapat melakukan registrasi. Jika pengajuan disetujui sebagai penyedia, petani akan diberikan akses untuk menggunakan aplikasi TaniGO yang sudah dilengkapi oleh teknologi computer vision dan AI untuk pengendalian dan monitoring smart farming petani berikut pengendalian hasil komoditas buah mereka, serta terintegrasi ke pasar global dalam bentuk B2B.'
     }
   ];
 
