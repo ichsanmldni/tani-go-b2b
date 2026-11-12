@@ -9,6 +9,7 @@ import PanduanJemputSection from './components/PanduanJemputSection';
 import AboutSection from './components/AboutSection';
 import FaqSection from './components/FaqSection';
 import Footer from './components/Footer';
+import PromoBannerAd from './components/PromoBannerAd';
 import { fetchB2BCommodities } from './services/api';
 import { mockB2BData } from './data/mockFallback';
 import { MagnifyingGlass, Plant, X } from '@phosphor-icons/react';
@@ -325,6 +326,9 @@ export default function App() {
 
       {/* Footer */}
       <Footer />
+
+      {/* Closeable Responsive Promo Banner Ads */}
+      <PromoBannerAd />
     </div>
   );
 }
